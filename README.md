@@ -30,7 +30,16 @@ The `path` specifies the local filesystem path to the root of the repository
 
 # Installation & Usage
 
-This is meant as a dependency in other repos. Use instructions there.
+You can run naucse_render from the command line:
+
+```console
+python -m naucse_render get-course courses/mi-pyt
+
+python -m naucse_render get-lessons beginners/install beginners/venv-setup
+```
+
+By default, data is retreived from the current working directory.
+Use the `--path` option to point naucse_render elsewhere.
 
 
 ## Tests

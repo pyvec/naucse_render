@@ -18,6 +18,9 @@ def get_lessons(lesson_slugs, vars=None, path='.'):
 
     This entrypoint is here to cut down on repeated Arca calls.
     """
+    if vars is None:
+        vars = {}
+
     path = Path(path).resolve()
     data = {}
     for slug in lesson_slugs:
