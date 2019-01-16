@@ -25,5 +25,15 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         ],
+    install_requires=[
+        'ansi2html',
+        'mistune',
+        'nbconvert',
+        'traitlets',
+        'click',
+        'PyYAML',
+        'Jinja2',
+        'Pygments',
+    ],
     zip_safe=False,
 )
