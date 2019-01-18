@@ -1,0 +1,18 @@
+language: python
+
+python:
+- '3.6'
+
+cache:
+  directories:
+  - $HOME/.cache/pip
+
+install:
+- python -m pip install . pytest
+
+script:
+- python -m pytest test_naucse_render
+
+after_script:
+- echo "Suplementary logs:"
+- cat .arca/naucse.log
