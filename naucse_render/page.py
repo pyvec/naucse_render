@@ -1,4 +1,4 @@
-from pathlib import Path, PosixPath
+from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse
 import types
 import sys
@@ -43,7 +43,7 @@ def rewrite_relative_url(url, slug):
     if parsed.scheme or parsed.hostname:
         return url
 
-    parts = list(PosixPath(parsed.path).parts)
+    parts = list(PurePosixPath(parsed.path).parts)
 
     if parts and parts[0] == 'static':
         return static_url('/'.join(parts[1:]), _anchor=parsed.fragment)
