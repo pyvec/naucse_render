@@ -13,15 +13,17 @@ from .load import read_yaml
 from .markdown import convert_markdown
 
 
-def encode_dates(value):
+def encode_to_json(value):
     if isinstance(value, datetime.date):
         return value.isoformat()
     elif isinstance(value, dict):
-        return {k: encode_dates(v) for k, v in value.items()}
+        return {k: encode_to_json(v) for k, v in value.items()}
     elif isinstance(value, (list, tuple)):
-        return [encode_dates(v) for v in value]
+        return [encode_to_json(v) for v in value]
     elif isinstance(value, (str, int, bool, type(None))):
         return value
+    elif isinstance(value, Markup):
+        return str(value)
     raise TypeError(value)
 
 
@@ -115,7 +117,7 @@ def get_course(course_slug: str, *, path='.', version=None):
                         'content': convert_markdown(page_md_path.read_text()),
                     }
 
-    result = encode_dates(info)
+    result = encode_to_json(info)
     return {
         'api_version': [0, 0],  # Version "0.0"
         'course': result,

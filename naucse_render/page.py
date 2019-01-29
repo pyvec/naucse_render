@@ -17,7 +17,9 @@ def to_list(value):
 
 
 def to_html_list(value, inline=False):
-    return [convert_markdown(item, inline=inline) for item in to_list(value)]
+    return [
+        str(convert_markdown(item, inline=inline)) for item in to_list(value)
+    ]
 
 
 def lesson_url(lesson_name, *, page='index', _anchor=''):
@@ -143,7 +145,7 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
         raise ValueError(info['style'])
 
     # Auxilliary metadata
-    page['content'] = text
+    page['content'] = str(text)
     page['solutions'] = [{'content': s} for s in solutions]
     page['source_file'] = str(page_path.relative_to(base_path))
     if 'css' in info:
