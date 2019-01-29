@@ -1,0 +1,14 @@
+api_version:
+- 0
+- 0
+course:
+    default_time:
+        end: '21:00'
+        start: '19:00'
+    sessions:
+    -   date: '2000-01-01'
+        slug: normal-lesson
+        source_file: runs/2000/run-with-times/info.yml
+        title: A normal lesson
+    source_file: runs/2000/run-with-times/info.yml
+    title: Test run with scheduled times

@@ -1,0 +1,18 @@
+api_version:
+- 0
+- 0
+course:
+    description: "Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu."
+    long_description: "<p>Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu.</p>\n\
+        <p>Jednotliv\xE9 kurzy jsou poskl\xE1dan\xE9 z\_t\u011Bchto materi\xE1l\u016F\
+        \n(a dopln\u011Bn\xE9 jin\xFDmi).</p>"
+    sessions:
+    -   materials:
+        -   lesson_slug: beginners/install-editor
+            title: Instalace editoru
+            type: lesson
+        slug: beginners
+        source_file: lessons
+        title: '`beginners`'
+    source_file: lessons
+    title: "Kanonick\xE9 lekce"

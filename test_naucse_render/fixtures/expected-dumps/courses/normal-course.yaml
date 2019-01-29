@@ -1,0 +1,10 @@
+api_version:
+- 0
+- 0
+course:
+    sessions:
+    -   slug: normal-lesson
+        source_file: courses/normal-course/info.yml
+        title: A normal lesson
+    source_file: courses/normal-course/info.yml
+    title: A plain vanilla course

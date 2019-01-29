@@ -1,0 +1,11 @@
+api_version:
+- 0
+- 0
+course:
+    sessions:
+    -   date: '2000-01-01'
+        slug: normal-lesson
+        source_file: runs/2000/run-without-times/info.yml
+        title: A normal lesson
+    source_file: runs/2000/run-without-times/info.yml
+    title: Test run without scheduled times

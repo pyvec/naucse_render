@@ -1,0 +1,85 @@
+api_version:
+- 0
+- 0
+data:
+    beginners/install-editor:
+        pages:
+            atom:
+                attribution:
+                - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
+                content: "<h1>Instalace  Atomu</h1>\n<p>Editor Atom\nsi st\xE1hni\
+                    \ z\_jeho <a href=\"https://atom.io\">domovsk\xE9 str\xE1nky</a>\n\
+                    a nainstaluj.</p>\n<h2>Nastaven\xED</h2>\n<p>... jakmile v\_tomhle\
+                    \ editoru vytvo\u0159\xED\u0161 nov\xFD soubor,\nm\u011Bl/a bys\
+                    \ ho co nejd\u0159\xEDv ulo\u017Eit pod spr\xE1vn\xFDm jm\xE9\
+                    nem.</p>\n<h2>Kontrola stylu zdrojov\xE9ho k\xF3du</h2>\n<p>...</p>\n\
+                    <h2>N\xE1cvik odsazov\xE1n\xED</h2>\n<p>...</p>"
+                license: cc-by-sa-40
+                slug: atom
+                solutions: []
+                source_file: lessons/beginners/install-editor/atom.md
+                title: "Nastaven\xED Atomu"
+                vars: {}
+            gedit:
+                attribution:
+                - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
+                content: "<h1>Instalace  Geditu</h1>\n<p>Na Linuxu se Gedit instaluje\
+                    \ jako ostatn\xED programy:</p>\n<dl>\n<dt></dt><dt>Fedora</dt><dd><div\
+                    \ class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>sudo\
+                    \ dnf install gedit\n</pre></div></dd><dt></dt><dt>Ubuntu</dt><dd><div\
+                    \ class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>sudo\
+                    \ apt-get install gedit\n</pre></div></dd></dl><p>Pou\u017E\xED\
+                    v\xE1\u0161-li jin\xFD Linux, p\u0159edpokl\xE1d\xE1m \u017Ee\
+                    \ programy instalovat um\xED\u0161. :)</p>\n<p>Pro Windows a macOS\
+                    \ se Gedit d\xE1 st\xE1hnout z\_<a href=\"https://wiki.gnome.org/Apps/Gedit\"\
+                    >domovsk\xE9 str\xE1nky</a>.</p>\n<h2>Nastaven\xED</h2>\n<p>...</p>\n\
+                    <dl>\n<dt></dt><dt>\u010C\xEDslov\xE1n\xED \u0159\xE1dk\u016F\
+                    </dt><dd><p>V\_sekci Zobrazit/<span class=\"en\">View</span> vyber\n\
+                    Zobrazovat \u010D\xEDsla \u0159\xE1dk\u016F/<span class=\"en\"\
+                    >Display Line Numbers</span>.</p>\n<p><span class=\"figure\"><a\
+                    \ href=\"naucse:static?filename=gedit_linenums.png\"><img src=\"\
+                    naucse:static?filename=gedit_linenums.png\" alt=\"\"></a></span></p>\n\
+                    </dd></dl><p>...</p>\n<h2>N\xE1cvik odsazov\xE1n\xED</h2>\n<p>...</p>"
+                license: cc-by-sa-40
+                slug: gedit
+                solutions: []
+                source_file: lessons/beginners/install-editor/gedit.md
+                title: "Nastaven\xED Geditu"
+                vars: {}
+            index:
+                attribution:
+                - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
+                content: "<p>...</p>\n<h2>Co program\xE1torsk\xFD editor um\xED</h2>\n\
+                    <p>...</p>\n<dl>\n<dt></dt><dt>Podpora v\xEDce soubor\u016F</dt><dd><p>V\u011B\
+                    t\u0161\xED projekty sest\xE1vaj\xED z\_v\xEDce soubor\u016F,\
+                    \ kter\xE9 m\u016F\u017Ee\u0161 m\xEDt v\_editoru\notev\u0159\
+                    en\xE9 v\u0161echny najednou.</p>\n</dd><dt></dt><dt>\u010C\xED\
+                    slov\xE1n\xED \u0159\xE1dk\u016F</dt><dd><p>P\u0159ed ka\u017E\
+                    d\xFDm \u0159\xE1dkem se ukazuje \u010D\xEDslo.\nTo se bude velice\
+                    \ hodit, a\u017E Python bude nad\xE1vat, \u017Ee chyba je na \u0159\
+                    \xE1dku 183.</p>\n</dd></dl><p>...</p>\n<div class=\"admonition\
+                    \ note\"><p>Pro ilustraci, takhle m\u016F\u017Ee v\_editoru vypadat\
+                    \ kousek k\xF3du:</p>\n<div class=\"highlight\"><pre><span></span>\
+                    \    <span class=\"mi\">1</span>  <span class=\"nd\">@app.route</span><span\
+                    \ class=\"p\">(</span><span class=\"s1\">&#39;/courses/&lt;course:course&gt;/&#39;</span><span\
+                    \ class=\"p\">)</span>\n    <span class=\"mi\">2</span>  <span\
+                    \ class=\"k\">def</span> <span class=\"nf\">course_page</span><span\
+                    \ class=\"p\">(</span><span class=\"n\">course</span><span class=\"\
+                    p\">):</span>\n    <span class=\"mi\">3</span>      <span class=\"\
+                    o\">...</span>\n</pre></div></div><h2>Volba a nastaven\xED editoru</h2>\n\
+                    <p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=atom\"\
+                    >Atom</a> \u2013 doporu\u010Den\xFD editor pro\nWindows a macOS.</li>\n\
+                    </ul>\n<p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=gedit\"\
+                    >Gedit</a> \u2013 b\xFDv\xE1 na syst\xE9mech s\_prost\u0159ed\xED\
+                    m GNOME.</li>\n</ul>\n<p>...</p>"
+                license: cc-by-sa-40
+                slug: index
+                solutions: []
+                source_file: lessons/beginners/install-editor/index.md
+                title: Instalace editoru
+                vars: {}
+        source_file: lessons/beginners/install-editor/info.yml
+        static_files:
+            gedit_linenums.png:
+                path: lessons/beginners/install-editor/static/gedit_linenums.png
+        title: Instalace editoru
