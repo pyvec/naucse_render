@@ -49,7 +49,7 @@ def get_lesson(lesson_slug, vars, base_path):
         'title': lesson_info['title'],
         'static_files': dict(get_static_files(base_path, lesson_path)),
         'pages': {},
-        'source_file': str(lesson_path / 'info.yml'),
+        'source_file': str((lesson_path / 'info.yml').relative_to(base_path)),
     }
 
     lesson_vars = lesson_info.pop('vars', {})

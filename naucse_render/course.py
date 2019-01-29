@@ -39,7 +39,7 @@ def get_course(course_slug: str, *, path='.', version=None):
     # Find location on disk based on the course slug
     if course_slug == 'lessons':
         # special course containing all lessons
-        info = get_canonical_lessons_info(path)
+        info = get_canonical_lessons_info(base_path)
         path_parts = None
     else:
         parts = course_slug.split('/')
