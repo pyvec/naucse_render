@@ -3,14 +3,6 @@
 Helper for converting course material in YAML/Markdown/Jupyter to
 naucse.python.cz JSON API.
 
-## Version 0
-
-naucse_render 0.x should successfully render courses hosted on naucse.python.cz
-prior to 2019.
-
-The format of the source files grew organically, so there is no attempt here
-to document it.
-
 
 # Entrypoints
 
@@ -64,3 +56,21 @@ for full text. By contributing code to this repository, you agree to have it
 licensed under the same license.
 
 [LICENSE.MIT]: https://github.com/pyvec/naucse.python.cz/blob/master/LICENSE.MIT
+
+
+## Changelog
+
+### naucse_render 1.x
+
+* Source files are always reported as relative paths
+* YAML files are reloaded when they change
+* Added integration tests
+
+
+### naucse_render 0.x
+
+0.x should successfully render courses hosted on naucse.python.cz
+prior to 2019.
+
+The format of the source files grew organically, so there is no attempt here
+to document it.
