@@ -1,0 +1,25 @@
+api_version:
+- 0
+- 0
+data:
+    testcases/test_static_tree:
+        pages:
+            index:
+                attribution:
+                - Petr Viktorin
+                content: '<p><img src="naucse:static?filename=directory/smile.png"
+                    alt="smile"></p>
+
+                    <p>Output should have ''/'' as the directory separator, regardless
+                    of OS.</p>'
+                license: cc0
+                slug: index
+                solutions: []
+                source_file: lessons/testcases/test_static_tree/index.md
+                title: Tree of static files
+                vars: {}
+        source_file: lessons/testcases/test_static_tree/info.yml
+        static_files:
+            directory/smile.png:
+                path: lessons/testcases/test_static_tree/static/directory/smile.png
+        title: Tree of static files

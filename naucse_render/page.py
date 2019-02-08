@@ -9,6 +9,7 @@ from .templates import environment, vars_functions
 from .markdown import convert_markdown
 from .notebook import convert_notebook
 from .load import read_yaml
+from .encode import encode_for_json
 
 
 def to_list(value):
@@ -19,7 +20,7 @@ def to_list(value):
 
 def to_html_list(value, inline=False):
     return [
-        str(convert_markdown(item, inline=inline)) for item in to_list(value)
+        convert_markdown(item, inline=inline) for item in to_list(value)
     ]
 
 
@@ -150,12 +151,12 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
         raise ValueError(info['style'])
 
     # Auxilliary metadata
-    page['content'] = str(text)
+    page['content'] = text
     page['solutions'] = [{'content': s} for s in solutions]
-    page['source_file'] = str(page_path.relative_to(base_path))
+    page['source_file'] = page_path.relative_to(base_path)
     if 'css' in info:
         page['css'] = info['css']
     if 'latex' in info:
         page['modules'] = {'katex': '0.7.1'}
 
-    return page
+    return encode_for_json(page)

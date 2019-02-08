@@ -63,6 +63,7 @@ licensed under the same license.
 ### naucse_render 1.x
 
 * Make it possible to use data from a YAML file in lesson content
+* Make output the same on Windows as on "Unixy" systems
 
 
 ### naucse_render 1.0

@@ -6,25 +6,11 @@ render info for items.
 """
 
 from pathlib import Path
-import datetime
 import textwrap
 
 from .load import read_yaml
 from .markdown import convert_markdown
-
-
-def encode_to_json(value):
-    if isinstance(value, datetime.date):
-        return value.isoformat()
-    elif isinstance(value, dict):
-        return {k: encode_to_json(v) for k, v in value.items()}
-    elif isinstance(value, (list, tuple)):
-        return [encode_to_json(v) for v in value]
-    elif isinstance(value, str):
-        return str(value)
-    elif isinstance(value, (int, bool, type(None))):
-        return value
-    raise TypeError(value)
+from .encode import encode_for_json
 
 
 def get_course(course_slug: str, *, path='.', version=None):
@@ -117,7 +103,7 @@ def get_course(course_slug: str, *, path='.', version=None):
                         'content': convert_markdown(page_md_path.read_text()),
                     }
 
-    result = encode_to_json(info)
+    result = encode_for_json(info)
     return {
         'api_version': [0, 0],  # Version "0.0"
         'course': result,
