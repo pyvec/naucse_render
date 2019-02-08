@@ -1,0 +1,13 @@
+tasks:
+
+- markdown: |
+    A task
+
+- markdown: |
+    Task with list:
+
+    - a
+    - b
+
+- markdown: |
+    Static files handled with a ![smile](static/smile.png).

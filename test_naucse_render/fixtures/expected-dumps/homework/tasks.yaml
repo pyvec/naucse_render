@@ -1,0 +1,25 @@
+api_version:
+- 0
+- 0
+data:
+    homework/tasks:
+        pages:
+            index:
+                attribution:
+                - Pro PyLadies Brno napsal Petr Viktorin, 2014-2019
+                content: "<ol>\n\n    <li>\n        <p>A task</p>\n    </li>\n\n \
+                    \   <li>\n        <p>Task with list:</p>\n<ul>\n<li>a</li>\n<li>b</li>\n\
+                    </ul>\n    </li>\n\n    <li>\n        <p>Static files handled\
+                    \ with a <img src=\"naucse:static?filename=smile.png\" alt=\"\
+                    smile\">.</p>\n    </li>\n\n</ol>"
+                license: cc-by-sa-40
+                slug: index
+                solutions: []
+                source_file: lessons/homework/tasks/index.md
+                title: Tasks
+                vars: {}
+        source_file: lessons/homework/tasks/info.yml
+        static_files:
+            smile.png:
+                path: lessons/homework/tasks/static/smile.png
+        title: Tasks

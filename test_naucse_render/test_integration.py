@@ -22,7 +22,10 @@ def test_render_course(slug):
 
 @pytest.mark.parametrize(
     'slug',
-    ['beginners/install-editor'],
+    [
+        'beginners/install-editor',
+        'homework/tasks',
+    ],
 )
 def test_render_lesson(slug):
     path = fixture_path / 'test_content'

@@ -8,6 +8,7 @@ import jinja2
 from .templates import environment, vars_functions
 from .markdown import convert_markdown
 from .notebook import convert_notebook
+from .load import read_yaml
 
 
 def to_list(value):
@@ -118,7 +119,7 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
         env = environment.overlay(
             loader=jinja2.FileSystemLoader(str(lessons_path)),
         )
-        text = env.get_template(f'{lesson_slug}/{page_filename}').render(
+        args = dict(
             lesson_url=lesson_url,
             subpage_url=lambda page: lesson_url(lesson_slug, page=page),
             static=static_url,
@@ -133,6 +134,10 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
             # XXX: 'lesson' for templates is deprecated
             lesson=types.SimpleNamespace(slug=lesson_slug),
         )
+        if 'data' in info:
+            args['data'] = read_yaml(lesson_path, info['data'])
+        template = env.get_template(f'{lesson_slug}/{page_filename}')
+        text = template.render(**args)
     else:
         text = page_path.read_text(encoding='utf-8')
 
