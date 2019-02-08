@@ -60,6 +60,11 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.x
+
+* Make it possible to use data from a YAML file in lesson content
+
+
 ### naucse_render 1.0
 
 * Source files are always reported as relative paths
