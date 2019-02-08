@@ -25,6 +25,7 @@ def test_render_course(slug):
     [
         'beginners/install-editor',
         'homework/tasks',
+        'testcases/test_static_tree',
     ],
 )
 def test_render_lesson(slug):

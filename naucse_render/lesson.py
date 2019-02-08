@@ -11,6 +11,7 @@ import textwrap
 
 from .load import read_yaml
 from .page import render_page
+from .encode import encode_for_json
 
 
 def get_lessons(lesson_slugs, vars=None, path='.'):
@@ -32,7 +33,7 @@ def get_lessons(lesson_slugs, vars=None, path='.'):
             data[slug] = lesson_data
     return {
         'api_version': [0, 0],
-        'data': data,
+        'data': encode_for_json(data),
     }
 
 
@@ -49,7 +50,7 @@ def get_lesson(lesson_slug, vars, base_path):
         'title': lesson_info['title'],
         'static_files': dict(get_static_files(base_path, lesson_path)),
         'pages': {},
-        'source_file': str((lesson_path / 'info.yml').relative_to(base_path)),
+        'source_file': (lesson_path / 'info.yml').relative_to(base_path),
     }
 
     lesson_vars = lesson_info.pop('vars', {})
@@ -70,8 +71,8 @@ def get_static_files(base_path, lesson_path):
     static_path = lesson_path / 'static'
     for file_path in static_path.glob('**/*'):
         if file_path.is_file():
-            filename = str(file_path.relative_to(static_path))
-            path = str(file_path.relative_to(base_path))
+            filename = file_path.relative_to(static_path)
+            path = file_path.relative_to(base_path)
             yield (
                 filename,
                 {'path': path},

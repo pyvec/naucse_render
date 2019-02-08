@@ -21,5 +21,12 @@ course:
         slug: homework
         source_file: lessons
         title: '`homework`'
+    -   materials:
+        -   lesson_slug: testcases/test_static_tree
+            title: Tree of static files
+            type: lesson
+        slug: testcases
+        source_file: lessons
+        title: '`testcases`'
     source_file: lessons
     title: "Kanonick\xE9 lekce"
