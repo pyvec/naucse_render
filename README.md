@@ -60,7 +60,7 @@ licensed under the same license.
 
 ## Changelog
 
-### naucse_render 1.x
+### naucse_render 1.0
 
 * Source files are always reported as relative paths
 * YAML files are reloaded when they change
