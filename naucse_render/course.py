@@ -20,10 +20,10 @@ def encode_to_json(value):
         return {k: encode_to_json(v) for k, v in value.items()}
     elif isinstance(value, (list, tuple)):
         return [encode_to_json(v) for v in value]
-    elif isinstance(value, (str, int, bool, type(None))):
-        return value
-    elif isinstance(value, Markup):
+    elif isinstance(value, str):
         return str(value)
+    elif isinstance(value, (int, bool, type(None))):
+        return value
     raise TypeError(value)
 
 
