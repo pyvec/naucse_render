@@ -14,5 +14,12 @@ course:
         slug: beginners
         source_file: lessons
         title: '`beginners`'
+    -   materials:
+        -   lesson_slug: homework/tasks
+            title: Tasks
+            type: lesson
+        slug: homework
+        source_file: lessons
+        title: '`homework`'
     source_file: lessons
     title: "Kanonick\xE9 lekce"
