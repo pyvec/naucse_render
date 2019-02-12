@@ -43,7 +43,3 @@ install:
 
 script:
 - $PYTHON -m pytest test_naucse_render
-
-after_script:
-- echo "Suplementary logs:"
-- cat .arca/naucse.log
