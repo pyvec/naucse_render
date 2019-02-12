@@ -60,7 +60,7 @@ licensed under the same license.
 
 ## Changelog
 
-### naucse_render 1.x
+### naucse_render 1.1
 
 * Make it possible to use data from a YAML file in lesson content
 * Make output the same on Windows as on "Unixy" systems
