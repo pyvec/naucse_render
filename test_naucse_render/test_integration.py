@@ -9,6 +9,7 @@ from test_naucse_render.conftest import assert_yaml_dump, fixture_path
     'slug',
     [
         'courses/normal-course',
+        'courses/serial-test',
         '2000/run-without-times',
         '2000/run-with-times',
         'lessons',

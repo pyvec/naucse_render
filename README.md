@@ -60,6 +60,19 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.2
+
+* API version 0.1
+* Serial "numbers" are now generated for sessions.
+  * Serials are strings (or None). Usually they are numeric (like `'1'`),
+    and in the source YAML they may be specified as int.
+    But, for example, an appendix could use Roman numerals: `i`, `ii`, `iii`.
+  * When a serial is not given in the source YAML explicitly, it is
+    auto-generated as the previous serial plus 1 (or from `1` at the start).
+    Serials specified as str (or None) prevent this auto-generation.
+  * For courses with only one session, the serial is not auto-generated.
+
+
 ### naucse_render 1.1
 
 * Make it possible to use data from a YAML file in lesson content

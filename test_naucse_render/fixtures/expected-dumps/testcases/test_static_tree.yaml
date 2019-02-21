@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 0
+- 1
 data:
     testcases/test_static_tree:
         pages:

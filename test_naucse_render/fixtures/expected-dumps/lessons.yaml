@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 0
+- 1
 course:
     description: "Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu."
     long_description: "<p>Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu.</p>\n\
@@ -11,6 +11,7 @@ course:
         -   lesson_slug: beginners/install-editor
             title: Instalace editoru
             type: lesson
+        serial: '1'
         slug: beginners
         source_file: lessons
         title: '`beginners`'
@@ -18,6 +19,7 @@ course:
         -   lesson_slug: homework/tasks
             title: Tasks
             type: lesson
+        serial: '2'
         slug: homework
         source_file: lessons
         title: '`homework`'
@@ -25,6 +27,7 @@ course:
         -   lesson_slug: testcases/test_static_tree
             title: Tree of static files
             type: lesson
+        serial: '3'
         slug: testcases
         source_file: lessons
         title: '`testcases`'

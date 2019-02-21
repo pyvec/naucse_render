@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 0
+- 1
 course:
     sessions:
     -   date: '2000-01-01'

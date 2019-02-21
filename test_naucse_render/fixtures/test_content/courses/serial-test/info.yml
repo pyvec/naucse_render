@@ -1,0 +1,43 @@
+title: A course to test handling of "serial" numbers/strings
+
+sessions:
+- title: Autonumber 1
+  slug: autonumber-1
+
+- title: Autonumber 2
+  slug: autonumber-2
+
+- title: No Serial 1
+  slug: no-serial-1
+  serial: null
+
+- title: No Serial 2
+  slug: no-serial-2
+  serial: null
+
+- title: String Serial 2
+  slug: string-serial-2
+  serial: '2'
+
+- title: No Serial 3
+  slug: no-serial-3
+  serial: null
+
+- title: String Serial-iv
+  slug: string-serial-iv
+  serial: 'iv'
+
+- title: No Serial 4
+  slug: no-serial-4
+  serial: null
+
+- title: Int Serial 5
+  slug: int-serial-5
+  serial: 5
+
+- title: Autonumber 6
+  slug: autonumber-6
+
+- title: Int Serial 6
+  slug: int-serial-6
+  serial: 6

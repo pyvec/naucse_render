@@ -10,7 +10,7 @@ import textwrap
 
 from .load import read_yaml
 from .markdown import convert_markdown
-from .encode import encode_for_json
+from .encode import encode_for_json, API_VERSION
 
 
 def get_course(course_slug: str, *, path='.', version=None):
@@ -70,6 +70,8 @@ def get_course(course_slug: str, *, path='.', version=None):
     if 'time' in info:
         info['time_description'] = info.pop('time')
 
+    last_serial = 0
+
     for session in info['sessions']:
         session['source_file'] = info['source_file']
 
@@ -103,11 +105,19 @@ def get_course(course_slug: str, *, path='.', version=None):
                         'content': convert_markdown(page_md_path.read_text()),
                     }
 
-    result = encode_for_json(info)
-    return {
-        'api_version': [0, 0],  # Version "0.0"
-        'course': result,
-    }
+        if 'serial' in session:
+            last_serial = session['serial']
+            session['serial'] = str(last_serial)
+        elif isinstance(last_serial, int) and len(info['sessions']) > 1:
+            last_serial += 1
+            session['serial'] = str(last_serial)
+        else:
+            last_serial = None
+
+    return encode_for_json({
+        'api_version': API_VERSION,
+        'course': info,
+    })
 
 
 def update_material(material, vars=None, *, path):

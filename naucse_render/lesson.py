@@ -11,7 +11,7 @@ import textwrap
 
 from .load import read_yaml
 from .page import render_page
-from .encode import encode_for_json
+from .encode import encode_for_json, API_VERSION
 
 
 def get_lessons(lesson_slugs, vars=None, path='.'):
@@ -31,10 +31,10 @@ def get_lessons(lesson_slugs, vars=None, path='.'):
             pass
         else:
             data[slug] = lesson_data
-    return {
-        'api_version': [0, 0],
-        'data': encode_for_json(data),
-    }
+    return encode_for_json({
+        'api_version': API_VERSION,
+        'data': data,
+    })
 
 
 def get_lesson(lesson_slug, vars, base_path):
