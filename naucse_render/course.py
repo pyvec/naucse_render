@@ -107,7 +107,9 @@ def get_course(course_slug: str, *, path='.', version=None):
 
         if 'serial' in session:
             last_serial = session['serial']
-            if last_serial is not None:
+            if last_serial is None:
+                del session['serial']
+            else:
                 session['serial'] = str(last_serial)
                 if not isinstance(last_serial, (int, str)):
                     tp = type(last_serial).__name__
