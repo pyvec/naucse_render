@@ -109,6 +109,11 @@ def get_course(course_slug: str, *, path='.', version=None):
             last_serial = session['serial']
             if last_serial is not None:
                 session['serial'] = str(last_serial)
+                if not isinstance(last_serial, (int, str)):
+                    tp = type(last_serial).__name__
+                    raise TypeError(
+                        f'The serial should be str, int or None; got {tp}'
+                    )
         elif isinstance(last_serial, int) and len(info['sessions']) > 1:
             last_serial += 1
             session['serial'] = str(last_serial)

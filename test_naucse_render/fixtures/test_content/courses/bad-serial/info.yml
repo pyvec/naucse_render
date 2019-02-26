@@ -1,0 +1,6 @@
+title: A course to test handling of wrong type of "serial"
+
+sessions:
+- title: Bad serial type
+  slug: bad-serial
+  serial: ['a', 'list']

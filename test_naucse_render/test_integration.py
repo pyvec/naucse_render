@@ -33,3 +33,15 @@ def test_render_lesson(slug):
     path = fixture_path / 'test_content'
     lesson_info = naucse_render.get_lessons([slug], path=str(path))
     assert_yaml_dump(lesson_info, slug + '.yaml')
+
+
+@pytest.mark.parametrize(
+    ['slug', 'exception_type'],
+    [
+        ('courses/bad-serial', TypeError),
+    ],
+)
+def test_negative_course(slug, exception_type):
+    path = fixture_path / 'test_content'
+    with pytest.raises(exception_type):
+        lesson_info = naucse_render.get_course(slug, path=str(path))
