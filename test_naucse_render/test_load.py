@@ -57,3 +57,18 @@ def test_read_yaml_disallow_parents(tmp_path):
     """Assert that read_yaml cache is invalidated when the file changes"""
     with pytest.raises(ValueError):
         read_yaml(tmp_path, '../../test.yaml')
+
+
+def test_isolated_load(tmp_path):
+    """Assert that read_yaml cache is invalidated when the file changes"""
+    yaml_path = tmp_path / 'test.yaml'
+    yaml_path.write_text("""data:
+        a: 1
+        b: 2
+    """)
+    data = read_yaml(tmp_path, 'test.yaml')
+    assert data == {'data': {'a': 1, 'b': 2}}
+    del data['data']['a']
+
+    data = read_yaml(tmp_path, 'test.yaml')
+    assert data == {'data': {'a': 1, 'b': 2}}

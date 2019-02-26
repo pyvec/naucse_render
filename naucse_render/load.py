@@ -1,6 +1,7 @@
 from pathlib import Path
 import functools
 import sys
+import copy
 
 import yaml
 
@@ -30,7 +31,7 @@ def read_yaml(base_path, *path_parts, source_key=None):
     if base_path not in yaml_path.parents:
         raise ValueError(f'Invalid path')
 
-    result = dict(_read_yaml(yaml_path, yaml_path.stat()))
+    result = copy.deepcopy(_read_yaml(yaml_path, yaml_path.stat()))
     if source_key:
         result[source_key] = '/'.join(path_parts)
     return result
