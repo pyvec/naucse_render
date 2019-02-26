@@ -11,11 +11,11 @@ course:
         slug: autonumber-2
         source_file: courses/serial-test/info.yml
         title: Autonumber 2
-    -   serial: None
+    -   serial: null
         slug: no-serial-1
         source_file: courses/serial-test/info.yml
         title: No Serial 1
-    -   serial: None
+    -   serial: null
         slug: no-serial-2
         source_file: courses/serial-test/info.yml
         title: No Serial 2
@@ -23,7 +23,7 @@ course:
         slug: string-serial-2
         source_file: courses/serial-test/info.yml
         title: String Serial 2
-    -   serial: None
+    -   serial: null
         slug: no-serial-3
         source_file: courses/serial-test/info.yml
         title: No Serial 3
@@ -31,7 +31,7 @@ course:
         slug: string-serial-iv
         source_file: courses/serial-test/info.yml
         title: String Serial-iv
-    -   serial: None
+    -   serial: null
         slug: no-serial-4
         source_file: courses/serial-test/info.yml
         title: No Serial 4

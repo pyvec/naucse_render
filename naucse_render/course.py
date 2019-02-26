@@ -107,7 +107,8 @@ def get_course(course_slug: str, *, path='.', version=None):
 
         if 'serial' in session:
             last_serial = session['serial']
-            session['serial'] = str(last_serial)
+            if last_serial is not None:
+                session['serial'] = str(last_serial)
         elif isinstance(last_serial, int) and len(info['sessions']) > 1:
             last_serial += 1
             session['serial'] = str(last_serial)
