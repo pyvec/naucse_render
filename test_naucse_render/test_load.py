@@ -60,7 +60,8 @@ def test_read_yaml_disallow_parents(tmp_path):
 
 
 def test_isolated_load(tmp_path):
-    """Assert that read_yaml cache is invalidated when the file changes"""
+    """Assert changing the data returned from read_yaml won't poison the cache
+    by changing the data in place."""
     yaml_path = tmp_path / 'test.yaml'
     yaml_path.write_text("""data:
         a: 1
