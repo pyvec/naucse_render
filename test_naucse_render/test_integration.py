@@ -12,6 +12,7 @@ from test_naucse_render.conftest import assert_yaml_dump, fixture_path
         'courses/serial-test',
         '2000/run-without-times',
         '2000/run-with-times',
+        '2000/run-with-timezone',
         'lessons',
     ],
 )

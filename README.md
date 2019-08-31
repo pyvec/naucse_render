@@ -86,6 +86,7 @@ licensed under the same license.
   * If the `title` of a non-`index` subpage may now be missing in the input.
     In that case, the `subtitle` must be present, and the `title` is generated
     as `"{lesson title} – {page subtitle}"`.
+* Timezone information is passed through
 
 
 ### naucse_render 1.2
