@@ -27,6 +27,9 @@ course:
         -   lesson_slug: testcases/test_static_tree
             title: Tree of static files
             type: lesson
+        -   lesson_slug: testcases/test_subpages
+            title: Subpages
+            type: lesson
         serial: '3'
         slug: testcases
         source_file: lessons

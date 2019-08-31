@@ -1,0 +1,51 @@
+api_version:
+- 0
+- 2
+data:
+    testcases/test_subpages:
+        pages:
+            both-titles:
+                attribution:
+                - Petr Viktorin
+                content: <p>This has both an explicit title and subtitle.</p>
+                license: cc0
+                slug: both-titles
+                solutions: []
+                source_file: lessons/testcases/test_subpages/both-titles.md
+                subtitle: Both Titles
+                title: Subpages (Both Titles)
+                vars: {}
+            index:
+                attribution:
+                - Petr Viktorin
+                content: <p>This is the main page.</p>
+                license: cc0
+                slug: index
+                solutions: []
+                source_file: lessons/testcases/test_subpages/index.md
+                title: Subpages
+                vars: {}
+            subtitled:
+                attribution:
+                - Petr Viktorin
+                content: <p>This has an explicit subtitle.</p>
+                license: cc0
+                slug: subtitled
+                solutions: []
+                source_file: lessons/testcases/test_subpages/subtitled.md
+                subtitle: Subtitled
+                title: "Subpages \u2013 Subtitled"
+                vars: {}
+            titled:
+                attribution:
+                - Petr Viktorin
+                content: <p>This has an explicit title.</p>
+                license: cc0
+                slug: titled
+                solutions: []
+                source_file: lessons/testcases/test_subpages/titled.md
+                title: Subpages (Titled)
+                vars: {}
+        source_file: lessons/testcases/test_subpages/info.yml
+        static_files: {}
+        title: Subpages

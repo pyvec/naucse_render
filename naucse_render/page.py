@@ -92,6 +92,10 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
     }
     if 'license_code' in info:
         page['license_code'] = info['license_code']
+    if 'subtitle' in info:
+        if page_slug == 'index':
+            raise ValueError('Index pages may not have a subtitle')
+        page['subtitle'] = info['subtitle']
 
     # Page content can be read from Markdown (md) or Jupyter Notebook (ipynb),
     # selected by 'style'.

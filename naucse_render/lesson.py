@@ -56,10 +56,15 @@ def get_lesson(lesson_slug, vars, base_path):
     lesson_vars = lesson_info.pop('vars', {})
 
     pages_info = lesson_info.pop('subpages', {})
-    pages_info.setdefault('index', {})
-
+    pages_info.setdefault('index', {'title': lesson_info['title']})
     for slug, page_info in pages_info.items():
-        info = {**lesson_info, **page_info}
+        info = {**lesson_info, 'title': None, **page_info}
+        if 'title' not in page_info:
+            try:
+                subtitle = info['subtitle']
+            except KeyError:
+                raise ValueError(f"'subtitle' is required for page {lesson_slug}/{slug}")
+            info['title'] = f"{lesson_info['title']} – {subtitle}"
         lesson['pages'][slug] = render_page(
             lesson_slug, slug, info, vars={**vars, **lesson_vars},
             path=base_path,
