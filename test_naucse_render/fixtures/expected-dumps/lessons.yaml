@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 1
+- 2
 course:
     description: "Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu."
     long_description: "<p>Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu.</p>\n\
