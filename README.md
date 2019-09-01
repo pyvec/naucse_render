@@ -88,6 +88,10 @@ licensed under the same license.
     as `"{lesson title} – {page subtitle}"`.
 * Timezone information is passed through
 * Mappings read from YAML must have unique keys.
+* Subpages may now be linked with relative URLs: `./page`, just like
+  other lessons can be linked with `../lesson` or `../../category/lesson`.
+  ("Short" linking to subpages of other lessons, like ~~`../lesson/page`~~,
+  still doesn't work.)
 
 
 ### naucse_render 1.2

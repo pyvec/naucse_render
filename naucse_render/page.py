@@ -2,6 +2,7 @@ from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse
 import types
 import sys
+import re
 
 import jinja2
 
@@ -64,6 +65,9 @@ def rewrite_relative_url(url, slug):
         group, name = slug.split('/')
         [name] = parts
         return lesson_url(f'{group}/{name}', _anchor=parsed.fragment)
+
+    if parsed.path.startswith('./') and len(parts) == 1:
+        return lesson_url(slug, page=parts[0])
 
     if parsed.path.startswith('.'):
         raise ValueError(url)
