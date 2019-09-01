@@ -6,11 +6,36 @@ import copy
 import yaml
 
 
+class YamlLoader(yaml.SafeLoader):
+    """Custom YAML loader"""
+
+# Disallow duplicate keys.
+# Workaround for PyYAML issue: https://github.com/yaml/pyyaml/issues/165
+# This disables some uses of YAML merge (`<<`)
+#  (see the xfailed test_read_yaml_allow_merge)
+
+def construct_maping(loader, node, deep=False):
+    """Construct a YAML mapping node, avoiding duplicates"""
+    loader.flatten_mapping(node)
+    result = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in result:
+            raise yaml.constructor.ConstructorError(f'Duplicate key {key}')
+        result[key] = loader.construct_object(value_node, deep=deep)
+    return result
+
+YamlLoader.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+    construct_maping,
+)
+
+
 @functools.lru_cache()
 def _read_yaml(path, stat):
     print('Loading', path, file=sys.stderr)
     with path.open(encoding='utf-8') as f:
-        return yaml.safe_load(f)
+        return yaml.load(f, Loader=YamlLoader)
 
 
 def read_yaml(base_path, *path_parts, source_key=None):

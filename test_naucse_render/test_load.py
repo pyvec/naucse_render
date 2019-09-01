@@ -1,4 +1,5 @@
 import pytest
+import yaml
 
 from naucse_render.load import read_yaml, _read_yaml
 
@@ -73,3 +74,38 @@ def test_isolated_load(tmp_path):
 
     data = read_yaml(tmp_path, 'test.yaml')
     assert data == {'data': {'a': 1, 'b': 2}}
+
+
+def test_read_yaml_disallow_duplicate_keys(tmp_path):
+    """Assert that read_yaml disallows duplicate keys"""
+    yaml_path = tmp_path / 'test.yaml'
+    yaml_path.write_text("""data:
+        a: 1
+        a: 2
+    """)
+    with pytest.raises(yaml.constructor.ConstructorError):
+        read_yaml(tmp_path, 'test.yaml')
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Incomplete workaround for https://github.com/yaml/pyyaml/issues/165"
+)
+def test_read_yaml_allow_merge(tmp_path):
+    """Assert that read_yaml allows overriding dict keys in YAML merge"""
+    yaml_path = tmp_path / 'test.yaml'
+    yaml_path.write_text("""data:
+        1:
+            <<: &common
+                a: a
+                b: b
+            a: override
+        2:
+            <<: *common
+            b: override
+    """)
+    data = read_yaml(tmp_path, 'test.yaml')
+    assert data == {
+        1: {'a': 'override', 'b': 'b'},
+        2: {'a': 'a', 'b': 'override'},
+    }

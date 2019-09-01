@@ -87,6 +87,7 @@ licensed under the same license.
     In that case, the `subtitle` must be present, and the `title` is generated
     as `"{lesson title} – {page subtitle}"`.
 * Timezone information is passed through
+* Mappings read from YAML must have unique keys.
 
 
 ### naucse_render 1.2
