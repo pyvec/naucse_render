@@ -22,12 +22,26 @@ The `path` specifies the local filesystem path to the root of the repository
 
 # Installation & Usage
 
+Install the latest released version from PyPI.
+With an activated virtualenv, do:
+
+```console
+(venv)$ pip install naucse_render
+```
+
+For development, you can instead install in editable mode
+with `dev` dependencies:
+
+```console
+(venv)$ pip install -e.[dev]
+```
+
 You can run naucse_render from the command line:
 
 ```console
-python -m naucse_render get-course courses/mi-pyt
+(venv)$ python -m naucse_render get-course courses/mi-pyt
 
-python -m naucse_render get-lessons beginners/install beginners/venv-setup
+(venv)$ python -m naucse_render get-lessons beginners/install beginners/venv-setup
 ```
 
 By default, data is retreived from the current working directory.
@@ -36,16 +50,16 @@ Use the `--path` option to point naucse_render elsewhere.
 
 ## Tests
 
-To tests, install `pipenv`, and install dependencies:
+To run tests, install this package with development dependencies:
 
 ```console
-$ pipenv install --dev
+(venv)$ pip install -e.[dev]
 ```
 
-then run the tests:
+then run the tests with `pytest`:
 
 ```console
-$ pipenv run test
+(venv)$ python -m pytest
 ```
 
 
