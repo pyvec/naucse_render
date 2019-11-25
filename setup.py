@@ -35,5 +35,8 @@ setup(
         'Jinja2',
         'Pygments',
     ],
+    extras_require={
+        'dev': ['pytest'],
+    },
     zip_safe=False,
 )
