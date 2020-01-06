@@ -191,7 +191,7 @@ def get_canonical_lessons_info(path):
 
     # XXX: This is not useful in "forks"
     lessons_path = path.resolve() / 'lessons'
-    return {
+    result = {
         'title': 'Kanonické lekce',
         'description': 'Seznam udržovaných lekcí bez ladu a skladu.',
         'long_description': convert_markdown(textwrap.dedent("""
@@ -201,17 +201,28 @@ def get_canonical_lessons_info(path):
             (a doplněné jinými).
         """)),
         'source_file': 'lessons',
-        'sessions': [
-            {
-                'title': f'`{category_path.name}`',
-                'slug': category_path.name,
-                'materials': [
-                    {'lesson': f'{category_path.name}/{lesson_path.name}'}
-                    for lesson_path in sorted(category_path.iterdir())
-                    if lesson_path.is_dir()
-                ]
-            }
-            for category_path in sorted(lessons_path.iterdir())
-            if category_path.is_dir()
-        ]
+        'sessions': []
     }
+    for category_path in sorted(lessons_path.iterdir()):
+        if not category_path.is_dir():
+            continue
+        session = {
+            'title': f'`{category_path.name}`',
+            'slug': category_path.name,
+            'materials': []
+        }
+
+        for lesson_path in sorted(category_path.iterdir()):
+            if not lesson_path.is_dir():
+                continue
+            if not (lesson_path / 'info.yml').exists():
+                continue
+            material = {
+                'lesson': f'{category_path.name}/{lesson_path.name}'
+            }
+            session['materials'].append(material)
+
+        if session['materials']:
+            result['sessions'].append(session)
+
+    return result

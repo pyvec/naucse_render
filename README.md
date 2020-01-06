@@ -74,6 +74,12 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.3
+
+* Lesson directories without data are ignored
+  (https://github.com/pyvec/naucse_render/issues/15)
+
+
 ### naucse_render 1.2
 
 * API version 0.1
