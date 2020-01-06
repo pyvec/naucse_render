@@ -1,8 +1,5 @@
 language: python
 
-env:
-  - PYTHON=python
-
 matrix:
   include:
     - os: linux
@@ -19,27 +16,26 @@ matrix:
       before_install:
         - choco install python --version 3.7
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
-        - python -m pip install --upgrade pip wheel
     - os: osx
-      # Perform the manual steps on osx to install python3
+      # Get Python 3.7 from pyenv
       language: sh
       python: 3.7
-      env:
-        - PYTHON=python3
-        - HOMEBREW_NO_INSTALL_CLEANUP=1
       before_install:
-        # Remove unneeded stuff (which Brew would want to upgrade)
-        - "brew remove numpy gdal postgis postgresql || :"
-        # Install or update Python
-        - "brew install python3 || :"
-        - "brew upgrade python3"
+        - HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade pyenv
+        - git clone https://github.com/momo-lab/pyenv-install-latest.git "$(pyenv root)"/plugins/pyenv-install-latest
+        - pyenv install-latest 3.7
+        - pyenv global $(pyenv install-latest --print 3.7)
+        - eval "$(pyenv init -)"
+
 
 cache:
   directories:
   - $HOME/.cache/pip
+  - $HOME/.pyenv/cache
 
 install:
-- $PYTHON -m pip install . 'pytest>=4.0'
+- python -m pip install --upgrade pip setuptools wheel
+- python -m pip install . 'pytest>=4.0'
 
 script:
-- $PYTHON -m pytest test_naucse_render
+- python -m pytest test_naucse_render
