@@ -33,7 +33,7 @@ setup(
         'click',
         'PyYAML',
         'Jinja2',
-        'Pygments',
+        'Pygments>=2.3.1',
     ],
     extras_require={
         'dev': ['pytest'],

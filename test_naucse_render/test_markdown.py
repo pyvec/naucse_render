@@ -227,7 +227,7 @@ def test_convert_with_prompt_spaces_console():
     """)
     expected = dedent("""
         <div class="highlight"><pre><span></span>
-        <span class="gp">(__venv__)$ </span>python
+        <span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>python
         </pre></div>
     """).strip().replace('\n', '')
     assert convert_markdown(src).replace('\n', '') == expected

@@ -60,8 +60,9 @@ data:
                     \xE1dku 183.</p>\n</dd></dl><p>...</p>\n<div class=\"admonition\
                     \ note\"><p>Pro ilustraci, takhle m\u016F\u017Ee v\_editoru vypadat\
                     \ kousek k\xF3du:</p>\n<div class=\"highlight\"><pre><span></span>\
-                    \    <span class=\"mi\">1</span>  <span class=\"nd\">@app.route</span><span\
-                    \ class=\"p\">(</span><span class=\"s1\">&#39;/courses/&lt;course:course&gt;/&#39;</span><span\
+                    \    <span class=\"mi\">1</span>  <span class=\"nd\">@app</span><span\
+                    \ class=\"o\">.</span><span class=\"n\">route</span><span class=\"\
+                    p\">(</span><span class=\"s1\">&#39;/courses/&lt;course:course&gt;/&#39;</span><span\
                     \ class=\"p\">)</span>\n    <span class=\"mi\">2</span>  <span\
                     \ class=\"k\">def</span> <span class=\"nf\">course_page</span><span\
                     \ class=\"p\">(</span><span class=\"n\">course</span><span class=\"\
