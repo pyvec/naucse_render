@@ -39,7 +39,7 @@ cache:
   - $HOME/.cache/pip
 
 install:
-- $PYTHON -m pip install . 'pytest>=4.0'
+- $PYTHON -m pip install .[dev]
 
 script:
-- $PYTHON -m pytest test_naucse_render
+- $PYTHON -m pytest
