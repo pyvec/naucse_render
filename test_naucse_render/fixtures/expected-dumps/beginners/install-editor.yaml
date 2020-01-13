@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 1
+- 2
 data:
     beginners/install-editor:
         pages:

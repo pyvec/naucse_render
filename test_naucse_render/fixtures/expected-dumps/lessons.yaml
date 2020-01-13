@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 1
+- 2
 course:
     description: "Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu."
     long_description: "<p>Seznam udr\u017Eovan\xFDch lekc\xED bez ladu a skladu.</p>\n\
@@ -26,6 +26,9 @@ course:
     -   materials:
         -   lesson_slug: testcases/test_static_tree
             title: Tree of static files
+            type: lesson
+        -   lesson_slug: testcases/test_subpages
+            title: Subpages
             type: lesson
         serial: '3'
         slug: testcases

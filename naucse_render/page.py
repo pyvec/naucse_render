@@ -2,6 +2,7 @@ from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse
 import types
 import sys
+import re
 
 import jinja2
 
@@ -65,6 +66,9 @@ def rewrite_relative_url(url, slug):
         [name] = parts
         return lesson_url(f'{group}/{name}', _anchor=parsed.fragment)
 
+    if parsed.path.startswith('./') and len(parts) == 1:
+        return lesson_url(slug, page=parts[0])
+
     if parsed.path.startswith('.'):
         raise ValueError(url)
     return url
@@ -92,6 +96,10 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
     }
     if 'license_code' in info:
         page['license_code'] = info['license_code']
+    if 'subtitle' in info:
+        if page_slug == 'index':
+            raise ValueError('Index pages may not have a subtitle')
+        page['subtitle'] = info['subtitle']
 
     # Page content can be read from Markdown (md) or Jupyter Notebook (ipynb),
     # selected by 'style'.

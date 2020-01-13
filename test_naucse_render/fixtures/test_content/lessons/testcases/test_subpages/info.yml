@@ -1,0 +1,12 @@
+title: Subpages
+style: md
+attribution: Petr Viktorin
+subpages:
+    titled:
+        title: "Subpages (Titled)"
+    subtitled:
+        subtitle: "Subtitled"
+    both-titles:
+        title: "Subpages (Both Titles)"
+        subtitle: "Both Titles"
+license: cc0

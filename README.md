@@ -78,6 +78,20 @@ licensed under the same license.
 
 * Lesson directories without data are ignored
   (https://github.com/pyvec/naucse_render/issues/15)
+* API version 0.2
+* Subpages now have subtitles
+  * Non-`index` subpages may optionally have a `subtitle`. For example,
+    a lesson named "Installation" might have a OS-specific subpage with the
+    subtitle "Linux".
+  * If the `title` of a non-`index` subpage may now be missing in the input.
+    In that case, the `subtitle` must be present, and the `title` is generated
+    as `"{lesson title} – {page subtitle}"`.
+* Timezone information is passed through
+* Mappings read from YAML must have unique keys.
+* Subpages may now be linked with relative URLs: `./page`, just like
+  other lessons can be linked with `../lesson` or `../../category/lesson`.
+  ("Short" linking to subpages of other lessons, like ~~`../lesson/page`~~,
+  still doesn't work.)
 
 
 ### naucse_render 1.2

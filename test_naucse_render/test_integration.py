@@ -12,6 +12,7 @@ from test_naucse_render.conftest import assert_yaml_dump, fixture_path
         'courses/serial-test',
         '2000/run-without-times',
         '2000/run-with-times',
+        '2000/run-with-timezone',
         'lessons',
     ],
 )
@@ -27,6 +28,7 @@ def test_render_course(slug):
         'beginners/install-editor',
         'homework/tasks',
         'testcases/test_static_tree',
+        'testcases/test_subpages',
     ],
 )
 def test_render_lesson(slug):
