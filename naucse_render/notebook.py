@@ -11,8 +11,8 @@ class NaucseHTMLExporter(HTMLExporter):
         self._convert_url = convert_url
         super().__init__(*args, **kwargs)
 
-    @traitlets.default('template_file')
-    def _template_file_default(self):
+    @traitlets.default('template_name')
+    def _template_name_default(self):
         return 'basic'
 
     def from_notebook_node(self, nb, resources=None, **kw):

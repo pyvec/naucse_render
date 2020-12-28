@@ -29,7 +29,7 @@ setup(
     install_requires=[
         'ansi2html',
         'mistune',
-        'nbconvert',
+        'nbconvert>=6.0.7,<7.0',
         'traitlets',
         'click',
         'PyYAML',
