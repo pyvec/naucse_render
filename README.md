@@ -74,6 +74,11 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.4
+
+Compatible with  `nbconvert` 6.0.
+
+
 ### naucse_render 1.3
 
 * Lesson directories without data are ignored
