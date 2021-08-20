@@ -1,0 +1,10 @@
+api_version:
+- 0
+- 2
+course:
+    sessions:
+    -   slug: normal-lesson
+        source_file: course.yml
+        title: A normal lesson
+    source_file: course.yml
+    title: The default course

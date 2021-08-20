@@ -10,7 +10,7 @@ def main():
     pass
 
 @main.command()
-@click.argument('slug')
+@click.argument('slug', metavar='SLUG', default='')
 @click.option(
     '--path', default='.', type=click.Path(file_okay=False, exists=True),
     help='Root of the naucse data repository')

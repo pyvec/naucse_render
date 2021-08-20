@@ -14,11 +14,17 @@ from test_naucse_render.conftest import assert_yaml_dump, fixture_path
         '2000/run-with-times',
         '2000/run-with-timezone',
         'lessons',
+        '',
+        None,
     ],
 )
 def test_render_course(slug):
     path = fixture_path / 'test_content'
-    course_info = naucse_render.get_course(slug, path=str(path))
+    if slug is None:
+        course_info = naucse_render.get_course(path=str(path))
+    else:
+        course_info = naucse_render.get_course(slug, path=str(path))
+    slug = slug or 'default'
     assert_yaml_dump(course_info, slug + '.yaml')
 
 

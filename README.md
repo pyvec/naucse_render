@@ -39,7 +39,7 @@ with `dev` dependencies:
 You can run naucse_render from the command line:
 
 ```console
-(venv)$ python -m naucse_render get-course courses/mi-pyt
+(venv)$ python -m naucse_render get-course
 
 (venv)$ python -m naucse_render get-lessons beginners/install beginners/venv-setup
 ```
@@ -73,6 +73,13 @@ licensed under the same license.
 
 
 ## Changelog
+
+### naucse_render 1.5
+
+* The `slug` is now optional; if not given (or given as the empty
+  string), the data is loaded from `course.yml` rather than a file in
+  `runs/` or `courses/`.
+
 
 ### naucse_render 1.4
 
