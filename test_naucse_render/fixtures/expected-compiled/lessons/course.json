@@ -1,0 +1,262 @@
+{
+    "api_version": [
+        0,
+        2
+    ],
+    "course": {
+        "description": "Seznam udržovaných lekcí bez ladu a skladu.",
+        "lessons": {
+            "beginners/install-editor": {
+                "pages": {
+                    "atom": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/atom.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "atom",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/atom.md",
+                        "title": "Nastavení Atomu",
+                        "vars": {}
+                    },
+                    "gedit": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/gedit.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "gedit",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/gedit.md",
+                        "title": "Nastavení Geditu",
+                        "vars": {}
+                    },
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/index.md",
+                        "title": "Instalace editoru",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/install-editor/info.yml",
+                "static_files": {
+                    "gedit_linenums.png": {
+                        "path": "install-editor/gedit_linenums.png"
+                    }
+                },
+                "title": "Instalace editoru"
+            },
+            "duplicate/install-editor": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Test"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.1.html"
+                        },
+                        "license": "cc-0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/duplicate/install-editor/index.md",
+                        "title": "Instalace editoru 2",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/duplicate/install-editor/info.yml",
+                "static_files": {},
+                "title": "Instalace editoru 2"
+            },
+            "homework/tasks": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2019"
+                        ],
+                        "content": {
+                            "path": "tasks/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homework/tasks/index.md",
+                        "title": "Tasks",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/homework/tasks/info.yml",
+                "static_files": {
+                    "smile.png": {
+                        "path": "tasks/smile.png"
+                    }
+                },
+                "title": "Tasks"
+            },
+            "testcases/test_static_tree": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Petr Viktorin"
+                        ],
+                        "content": {
+                            "path": "test_static_tree/index.html"
+                        },
+                        "license": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/testcases/test_static_tree/index.md",
+                        "title": "Tree of static files",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/testcases/test_static_tree/info.yml",
+                "static_files": {
+                    "directory/smile.png": {
+                        "path": "test_static_tree/directory/smile.png"
+                    }
+                },
+                "title": "Tree of static files"
+            },
+            "testcases/test_subpages": {
+                "pages": {
+                    "both-titles": {
+                        "attribution": [
+                            "Petr Viktorin"
+                        ],
+                        "content": {
+                            "path": "test_subpages/both-titles.html"
+                        },
+                        "license": "cc0",
+                        "slug": "both-titles",
+                        "solutions": [],
+                        "source_file": "lessons/testcases/test_subpages/both-titles.md",
+                        "subtitle": "Both Titles",
+                        "title": "Subpages (Both Titles)",
+                        "vars": {}
+                    },
+                    "index": {
+                        "attribution": [
+                            "Petr Viktorin"
+                        ],
+                        "content": {
+                            "path": "test_subpages/index.html"
+                        },
+                        "license": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/testcases/test_subpages/index.md",
+                        "title": "Subpages",
+                        "vars": {}
+                    },
+                    "subtitled": {
+                        "attribution": [
+                            "Petr Viktorin"
+                        ],
+                        "content": {
+                            "path": "test_subpages/subtitled.html"
+                        },
+                        "license": "cc0",
+                        "slug": "subtitled",
+                        "solutions": [],
+                        "source_file": "lessons/testcases/test_subpages/subtitled.md",
+                        "subtitle": "Subtitled",
+                        "title": "Subpages – Subtitled",
+                        "vars": {}
+                    },
+                    "titled": {
+                        "attribution": [
+                            "Petr Viktorin"
+                        ],
+                        "content": {
+                            "path": "test_subpages/titled.html"
+                        },
+                        "license": "cc0",
+                        "slug": "titled",
+                        "solutions": [],
+                        "source_file": "lessons/testcases/test_subpages/titled.md",
+                        "title": "Subpages (Titled)",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/testcases/test_subpages/info.yml",
+                "static_files": {},
+                "title": "Subpages"
+            }
+        },
+        "long_description": "<p>Seznam udržovaných lekcí bez ladu a skladu.</p>\n<p>Jednotlivé kurzy jsou poskládané z těchto materiálů\n(a doplněné jinými).</p>",
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/install-editor",
+                        "title": "Instalace editoru",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "1",
+                "slug": "beginners",
+                "source_file": "lessons",
+                "title": "`beginners`"
+            },
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "duplicate/install-editor",
+                        "title": "Instalace editoru 2",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "2",
+                "slug": "duplicate",
+                "source_file": "lessons",
+                "title": "`duplicate`"
+            },
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "homework/tasks",
+                        "title": "Tasks",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "3",
+                "slug": "homework",
+                "source_file": "lessons",
+                "title": "`homework`"
+            },
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "testcases/test_static_tree",
+                        "title": "Tree of static files",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "testcases/test_subpages",
+                        "title": "Subpages",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "4",
+                "slug": "testcases",
+                "source_file": "lessons",
+                "title": "`testcases`"
+            }
+        ],
+        "source_file": "lessons",
+        "title": "Kanonické lekce"
+    }
+}

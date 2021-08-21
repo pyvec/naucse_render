@@ -10,6 +10,17 @@ def main():
     pass
 
 @main.command()
+@click.argument('destination', metavar='DIR')
+@click.option(
+    '--slug', default='',
+    help='Slug of the course to compile')
+@click.option(
+    '--path', default='.', type=click.Path(file_okay=False, exists=True),
+    help='Root of the naucse data repository')
+def compile(slug, path, destination):
+    naucse_render.compile(slug=slug, path=path, destination=destination)
+
+@main.command()
 @click.argument('slug', metavar='SLUG', default='')
 @click.option(
     '--path', default='.', type=click.Path(file_okay=False, exists=True),

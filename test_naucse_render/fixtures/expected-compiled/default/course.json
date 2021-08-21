@@ -1,0 +1,106 @@
+{
+    "api_version": [
+        0,
+        2
+    ],
+    "course": {
+        "lessons": {
+            "beginners/install-editor": {
+                "pages": {
+                    "atom": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/atom.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "atom",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/atom.md",
+                        "title": "Nastavení Atomu",
+                        "vars": {}
+                    },
+                    "gedit": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/gedit.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "gedit",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/gedit.md",
+                        "title": "Nastavení Geditu",
+                        "vars": {}
+                    },
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/index.md",
+                        "title": "Instalace editoru",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/install-editor/info.yml",
+                "static_files": {
+                    "gedit_linenums.png": {
+                        "path": "install-editor/gedit_linenums.png"
+                    }
+                },
+                "title": "Instalace editoru"
+            },
+            "duplicate/install-editor": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Test"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.1.html"
+                        },
+                        "license": "cc-0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/duplicate/install-editor/index.md",
+                        "title": "Instalace editoru 2",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/duplicate/install-editor/info.yml",
+                "static_files": {},
+                "title": "Instalace editoru 2"
+            }
+        },
+        "long_description": "<p>A <em>very</em> long description</p>",
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/install-editor",
+                        "title": "Instalace editoru",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "duplicate/install-editor",
+                        "title": "Instalace editoru 2",
+                        "type": "lesson"
+                    }
+                ],
+                "slug": "normal-lesson",
+                "source_file": "course.yml",
+                "title": "A normal lesson"
+            }
+        ],
+        "source_file": "course.yml",
+        "title": "The default course"
+    }
+}

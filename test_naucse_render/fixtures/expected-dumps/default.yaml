@@ -2,8 +2,16 @@ api_version:
 - 0
 - 2
 course:
+    long_description: <p>A <em>very</em> long description</p>
     sessions:
-    -   slug: normal-lesson
+    -   materials:
+        -   lesson_slug: beginners/install-editor
+            title: Instalace editoru
+            type: lesson
+        -   lesson_slug: duplicate/install-editor
+            title: Instalace editoru 2
+            type: lesson
+        slug: normal-lesson
         source_file: course.yml
         title: A normal lesson
     source_file: course.yml

@@ -36,7 +36,14 @@ with `dev` dependencies:
 (venv)$ pip install -e.[dev]
 ```
 
-You can run naucse_render from the command line:
+You can run naucse_render from the command line.
+To “compile” a course to a directory of JSON metadata and static files:
+
+```console
+(venv)$ python -m naucse_render compile _built/
+```
+
+To output metadata for a course or individual lesson(s):
 
 ```console
 (venv)$ python -m naucse_render get-course
@@ -75,6 +82,9 @@ licensed under the same license.
 ## Changelog
 
 ### naucse_render 1.5
+
+* A new subcommand, `compile`, creates a directory with course data
+  and supporting files.
 
 * The `slug` is now optional; if not given (or given as the empty
   string), the data is loaded from `course.yml` rather than a file in

@@ -1,0 +1,75 @@
+{
+    "api_version": [
+        0,
+        2
+    ],
+    "course": {
+        "lessons": {},
+        "sessions": [
+            {
+                "serial": "1",
+                "slug": "autonumber-1",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "Autonumber 1"
+            },
+            {
+                "serial": "2",
+                "slug": "autonumber-2",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "Autonumber 2"
+            },
+            {
+                "slug": "no-serial-1",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "No Serial 1"
+            },
+            {
+                "slug": "no-serial-2",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "No Serial 2"
+            },
+            {
+                "serial": "2",
+                "slug": "string-serial-2",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "String Serial 2"
+            },
+            {
+                "slug": "no-serial-3",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "No Serial 3"
+            },
+            {
+                "serial": "iv",
+                "slug": "string-serial-iv",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "String Serial-iv"
+            },
+            {
+                "slug": "no-serial-4",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "No Serial 4"
+            },
+            {
+                "serial": "5",
+                "slug": "int-serial-5",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "Int Serial 5"
+            },
+            {
+                "serial": "6",
+                "slug": "autonumber-6",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "Autonumber 6"
+            },
+            {
+                "serial": "6",
+                "slug": "int-serial-6",
+                "source_file": "courses/serial-test/info.yml",
+                "title": "Int Serial 6"
+            }
+        ],
+        "source_file": "courses/serial-test/info.yml",
+        "title": "A course to test handling of \"serial\" numbers/strings"
+    }
+}
