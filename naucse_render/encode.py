@@ -1,7 +1,7 @@
 from pathlib import PurePath, PurePosixPath
 import datetime
 
-API_VERSION = (0, 2)  # Version 0.2
+API_VERSION = (0, 3)  # Version 0.3
 
 
 def encode_for_json(value):

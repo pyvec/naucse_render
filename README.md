@@ -86,6 +86,8 @@ licensed under the same license.
 * A new subcommand, `compile`, creates a directory with course data
   and supporting files.
 
+* API version 0.3
+
 * The `slug` is now optional; if not given (or given as the empty
   string), the data is loaded from `course.yml` rather than a file in
   `runs/` or `courses/`.

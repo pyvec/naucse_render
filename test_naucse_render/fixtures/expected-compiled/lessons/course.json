@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        2
+        3
     ],
     "course": {
         "description": "Seznam udržovaných lekcí bez ladu a skladu.",
