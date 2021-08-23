@@ -17,8 +17,24 @@ def main():
 @click.option(
     '--path', default='.', type=click.Path(file_okay=False, exists=True),
     help='Root of the naucse data repository')
-def compile(slug, path, destination):
-    naucse_render.compile(slug=slug, path=path, destination=destination)
+@click.option(
+    '--edit-repo-url',
+    help='URL to the repository where the content can be edited')
+@click.option(
+    '--edit-repo-branch',
+    help='Branch in the repository where the content can be edited')
+def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
+    edit_info = {}
+    if edit_repo_url:
+        edit_info['url'] = edit_repo_url
+    if edit_repo_branch:
+        edit_info['branch'] = edit_repo_branch
+    naucse_render.compile(
+        slug=slug,
+        path=path,
+        destination=destination,
+        edit_info=edit_info,
+    )
 
 @main.command()
 @click.argument('slug', metavar='SLUG', default='')

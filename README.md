@@ -87,6 +87,9 @@ licensed under the same license.
   and supporting files.
 
 * API version 0.3
+  * A course may have information about "edit info", specifying where the
+    course's sources can be edited. (This is only set when compiling
+    courses; in other cases the caller should know ehrer the code lives.)
 
 * The `slug` is now optional; if not given (or given as the empty
   string), the data is loaded from `course.yml` rather than a file in

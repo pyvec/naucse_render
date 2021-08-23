@@ -6,7 +6,7 @@ from .course import get_course
 from .lesson import get_lessons
 
 
-def compile(slug='', *, path='.', destination):
+def compile(slug='', *, path='.', destination, edit_info=None):
     """Compile the given course into a directory"""
     path = Path(path)
     destination = Path(destination)
@@ -33,6 +33,9 @@ def compile(slug='', *, path='.', destination):
             shutil.rmtree(destination)
 
     externalize_content(course_info, destination, path)
+
+    if edit_info:
+        course_info['edit_info'] = edit_info
 
     destination.mkdir(exist_ok=True, parents=True)
     with open(info_path, 'w', encoding='utf-8') as f:
