@@ -31,10 +31,10 @@ def assert_cmp_same(cmp):
     print('assert_cmp_same', cmp.left, cmp.right)
 
     if cmp.left_only:
-        raise AssertionError(f'Extra files frozen: {cmp.left_only}')
+        raise AssertionError(f'Extra files generated: {cmp.left_only}')
 
     if cmp.right_only:
-        raise AssertionError(f'Files not frozen: {cmp.right_only}')
+        raise AssertionError(f'Files not generated: {cmp.right_only}')
 
     if cmp.common_funny:
         raise AssertionError(f'Funny differences: {cmp.common_funny}')

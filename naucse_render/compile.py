@@ -27,7 +27,7 @@ def compile(slug='', *, path='.', destination):
             raise ValueError(
                 f"`{destination}` exists "
                 + "(and is not empty and doesn't contain previous info); "
-                + "delete it before freezing into it."
+                + "delete it before compiling into it."
             )
         else:
             shutil.rmtree(destination)
