@@ -6,7 +6,7 @@ from .course import get_course
 from .lesson import get_lessons
 
 
-def compile(slug='', *, path='.', destination, edit_info=None):
+def compile(slug=None, *, path='.', destination, edit_info=None):
     """Compile the given course into a directory"""
     path = Path(path)
     destination = Path(destination)

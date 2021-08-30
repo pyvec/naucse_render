@@ -12,7 +12,7 @@ def main():
 @main.command()
 @click.argument('destination', metavar='DIR')
 @click.option(
-    '--slug', default='',
+    '--slug', default=None,
     help='Slug of the course to compile')
 @click.option(
     '--path', default='.', type=click.Path(file_okay=False, exists=True),
@@ -29,6 +29,8 @@ def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
         edit_info['url'] = edit_repo_url
     if edit_repo_branch:
         edit_info['branch'] = edit_repo_branch
+    if slug == '':
+        slug = None
     naucse_render.compile(
         slug=slug,
         path=path,
@@ -37,7 +39,7 @@ def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
     )
 
 @main.command()
-@click.argument('slug', metavar='SLUG', default='')
+@click.argument('slug', metavar='SLUG', default=None)
 @click.option(
     '--path', default='.', type=click.Path(file_okay=False, exists=True),
     help='Root of the naucse data repository')
@@ -47,6 +49,8 @@ def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
 def get_course(slug, path, version):
     if path:
         path = Path(path)
+    if slug == '':
+        slug = None
 
     result = naucse_render.get_course(slug, path=path, version=version)
 

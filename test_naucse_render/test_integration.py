@@ -17,7 +17,6 @@ COURSE_SLUGS = (
     '2000/run-with-times',
     '2000/run-with-timezone',
     'lessons',
-    '',
     None,
 )
 

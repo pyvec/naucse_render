@@ -13,7 +13,7 @@ from .markdown import convert_markdown
 from .encode import encode_for_json, API_VERSION
 
 
-def get_course(course_slug: str = '', *, path='.', version=None):
+def get_course(course_slug: str = None, *, path='.', version=None):
     """Get information about the course as a JSON-compatible dict
     """
     # naucse's YAML files grew organically and use confusing terminology.
@@ -24,6 +24,10 @@ def get_course(course_slug: str = '', *, path='.', version=None):
 
     # Find location on disk based on the course slug
     if course_slug == '':
+        raise ValueError(
+            'The course slug cannot be empty. Use None for the default.'
+        )
+    elif course_slug is None:
         info = read_yaml(
             base_path, 'course.yml',
             source_key='source_file',
