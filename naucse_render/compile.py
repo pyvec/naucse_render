@@ -7,7 +7,23 @@ from .lesson import get_lessons
 
 
 def compile(slug=None, *, path='.', destination, edit_info=None):
-    """Compile the given course into a directory"""
+    """Compile the given course into a directory
+
+    Any existing files in `destination` are removed.
+    To help prevent deleting data by mistake, `destination` must either:
+       - not exist, or
+       - be empty, or
+       - look like the result of a previous compile
+         (specifically: have a `course.json` file).
+
+    After compiling, `destination` will contain a `course.json` file
+    with course data. Some data will be in external files and referenced
+    from `course.json` by name.
+    The filenames and directory structure of the result are meaningless and
+    may change at any time. (Currently, in most cases they'll look reasonable
+    to a human, which also helps Git's compression heuristics. But one should
+    always look them up in `course.json` rather than guess what they are.)
+    """
     path = Path(path)
     destination = Path(destination)
     info = get_course(slug, path=path)
