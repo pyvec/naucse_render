@@ -89,11 +89,11 @@ licensed under the same license.
 * API version 0.3
   * A course may have information about "edit info", specifying where the
     course's sources can be edited. (This is only set when compiling
-    courses; in other cases the caller should know ehrer the code lives.)
+    courses; in other cases, the caller should know where the code lives.)
 
 * The `slug` is now optional; if not given (or given as the empty
-  string), the data is loaded from `course.yml` rather than a file in
-  `runs/` or `courses/`.
+  string), the data is loaded from `course.yml` (in the given `path`, by
+  default the current directory) rather than a file in `runs/` or `courses/`.
 
 
 ### naucse_render 1.4
