@@ -22,7 +22,7 @@ def compile(slug=None, *, path='.', destination, edit_info=None):
     if destination.exists():
         if (
             not info_path.exists()
-            and any(info_path.glob('*'))
+            and any(destination.iterdir())
         ):
             raise ValueError(
                 f"`{destination}` exists "
