@@ -10,14 +10,11 @@ from test_naucse_render.conftest import fixture_path
     {'url': 'https://forge.example/myproject/'},
     {'url': 'https://forge.example/myproject/', 'branch': 'main'},
     {'key': 'value', 'checked_by': 'naucse not naucse_render'},
-    ({}, None),
+    {},
     None,
 ))
 def test_compile_course(tmp_path, edit_info):
-    if isinstance(edit_info, tuple):
-        edit_info, expected = edit_info
-    else:
-        expected = edit_info
+    expected = edit_info or None  # we expect nothing from empty dicts
     kwargs = {}
     if edit_info is not None:
         kwargs['edit_info'] = edit_info
