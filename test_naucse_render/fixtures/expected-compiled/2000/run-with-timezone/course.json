@@ -1,0 +1,24 @@
+{
+    "api_version": [
+        0,
+        3
+    ],
+    "course": {
+        "default_time": {
+            "end": "21:00",
+            "start": "19:00+01:00"
+        },
+        "lessons": {},
+        "sessions": [
+            {
+                "date": "2000-01-01",
+                "slug": "normal-lesson",
+                "source_file": "runs/2000/run-with-timezone/info.yml",
+                "title": "A normal lesson"
+            }
+        ],
+        "source_file": "runs/2000/run-with-timezone/info.yml",
+        "timezone": "Europe/Bratislava",
+        "title": "Test run with scheduled times"
+    }
+}

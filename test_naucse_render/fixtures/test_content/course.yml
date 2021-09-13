@@ -1,0 +1,9 @@
+title: The default course
+long_description: A *very* long description
+
+sessions:
+- title: A normal lesson
+  slug: normal-lesson
+  materials:
+  - lesson: beginners/install-editor
+  - lesson: duplicate/install-editor

@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 2
+- 3
 course:
     sessions:
     -   slug: normal-lesson

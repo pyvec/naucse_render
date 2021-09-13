@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 2
+- 3
 course:
     default_time:
         end: '21:00'
