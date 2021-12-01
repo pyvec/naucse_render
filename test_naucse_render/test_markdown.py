@@ -68,6 +68,16 @@ def test_markdown_admonition_code():
     assert convert_markdown(src) == expected
 
 
+def test_markdown_header_anchor():
+    src = dedent("""
+        # Čárky a háčky
+    """)
+    expected = """<h1 id="carky_a_hacky">Čárky a háčky
+<a href="#carky_a_hacky" class="permanent-link">#</a>
+</h1>"""
+    assert convert_markdown(src) == expected
+
+
 def test_markdown_admonition_html():
     src = dedent("""
             > [note]
