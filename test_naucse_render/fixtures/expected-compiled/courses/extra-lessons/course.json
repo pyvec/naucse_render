@@ -1,0 +1,76 @@
+{
+    "api_version": [
+        0,
+        3
+    ],
+    "course": {
+        "extra_lessons": [
+            "homework/tasks",
+            "duplicate/install-editor"
+        ],
+        "lessons": {
+            "duplicate/install-editor": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Test"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.html"
+                        },
+                        "license": "cc-0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/duplicate/install-editor/index.md",
+                        "title": "Instalace editoru 2",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/duplicate/install-editor/info.yml",
+                "static_files": {},
+                "title": "Instalace editoru 2"
+            },
+            "homework/tasks": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2019"
+                        ],
+                        "content": {
+                            "path": "tasks/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homework/tasks/index.md",
+                        "title": "Tasks",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/homework/tasks/info.yml",
+                "static_files": {
+                    "smile.png": {
+                        "path": "tasks/smile.png"
+                    }
+                },
+                "title": "Tasks"
+            }
+        },
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "duplicate/install-editor",
+                        "title": "Instalace editoru 2",
+                        "type": "lesson"
+                    }
+                ],
+                "slug": "normal-lesson",
+                "source_file": "courses/extra-lessons/info.yml",
+                "title": "A normal lesson"
+            }
+        ],
+        "source_file": "courses/extra-lessons/info.yml",
+        "title": "A course to test whether extra_lessons are included in output"
+    }
+}

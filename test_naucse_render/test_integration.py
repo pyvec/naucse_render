@@ -13,6 +13,7 @@ from test_naucse_render.conftest import assert_yaml_dump, fixture_path
 COURSE_SLUGS = (
     'courses/normal-course',
     'courses/serial-test',
+    'courses/extra-lessons',
     '2000/run-without-times',
     '2000/run-with-times',
     '2000/run-with-timezone',

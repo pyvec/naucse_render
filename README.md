@@ -81,6 +81,16 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.6
+
+* Courses can now specify `extra_lessons`, a list of lessons that
+  `compile` will include in its output even if they don't appear in
+  session materials.
+  This is more explicit than relying on links in the course content
+  (which would need to be parsed any time this info is needed, making
+  things slower).
+
+
 ### naucse_render 1.5
 
 * A new subcommand, `compile`, creates a directory with course data

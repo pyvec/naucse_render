@@ -1,0 +1,17 @@
+api_version:
+- 0
+- 3
+course:
+    extra_lessons:
+    - homework/tasks
+    - duplicate/install-editor
+    sessions:
+    -   materials:
+        -   lesson_slug: duplicate/install-editor
+            title: Instalace editoru 2
+            type: lesson
+        slug: normal-lesson
+        source_file: courses/extra-lessons/info.yml
+        title: A normal lesson
+    source_file: courses/extra-lessons/info.yml
+    title: A course to test whether extra_lessons are included in output

@@ -1,0 +1,11 @@
+title: A course to test whether extra_lessons are included in output
+
+sessions:
+- title: A normal lesson
+  slug: normal-lesson
+  materials:
+  - lesson: duplicate/install-editor
+
+extra_lessons:
+- homework/tasks  # only in extra_lessons
+- duplicate/install-editor  # in both extra_lessons and materials

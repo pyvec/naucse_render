@@ -59,7 +59,7 @@ def compile(slug=None, *, path='.', destination, edit_info=None):
 
 
 def get_lesson_slugs(course_info):
-    slugs = set()
+    slugs = set(course_info.get('extra_lessons', ()))
     for session_info in course_info.get('sessions', ()):
         for material_info in session_info.get('materials', ()):
             lesson_slug = material_info.get('lesson_slug')
