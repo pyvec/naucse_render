@@ -48,10 +48,16 @@ def get_course(course_slug: str = None, *, path='.', version=None):
         else:
             raise ValueError(f'Invalid course slug')
 
-        info = read_yaml(
-            base_path, *path_parts, 'info.yml',
-            source_key='source_file',
-        )
+        try:
+            info = read_yaml(
+                base_path, *path_parts[:-1], path_parts[-1] + '.yml',
+                source_key='source_file',
+            )
+        except FileNotFoundError:
+            info = read_yaml(
+                base_path, *path_parts, 'info.yml',
+                source_key='source_file',
+            )
 
     # We are only concerned about the content; naucse itself will determine
     # what courses it deems canonical/meta.

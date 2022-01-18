@@ -81,6 +81,13 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.7
+
+* Courses may now be specified with a "flat" file like
+  `courses/<course-slug>.yml`, rather than a `info.yml` file nested in a
+  directory.
+
+
 ### naucse_render 1.6
 
 * Courses can now specify `extra_lessons`, a list of lessons that

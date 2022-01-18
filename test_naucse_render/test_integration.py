@@ -14,9 +14,11 @@ COURSE_SLUGS = (
     'courses/normal-course',
     'courses/serial-test',
     'courses/extra-lessons',
+    'courses/flat',
     '2000/run-without-times',
     '2000/run-with-times',
     '2000/run-with-timezone',
+    '2000/flat',
     'lessons',
     None,
 )
