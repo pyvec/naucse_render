@@ -24,6 +24,7 @@ def main():
     '--edit-repo-branch',
     help='Branch in the repository where the content can be edited')
 def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
+    """Compile the given course to a directory with JSON & HTML data"""
     edit_info = {}
     if edit_repo_url:
         edit_info['url'] = edit_repo_url
@@ -47,6 +48,7 @@ def compile(slug, path, destination, edit_repo_url, edit_repo_branch):
     '--version',
     help='API version')
 def get_course(slug, path, version):
+    """Print a course in JSON format"""
     if path:
         path = Path(path)
     if slug == '':
@@ -62,9 +64,24 @@ def get_course(slug, path, version):
     '--path', default='.', type=click.Path(file_okay=False, exists=True),
     help='Root of the naucse data repository')
 def get_lessons(slugs, path):
+    """Print lessons in JSON format"""
     if path:
         path = Path(path)
 
     result = naucse_render.get_lessons(slugs, path=path)
+
+    print(json.dumps(result, indent=4, ensure_ascii=False))
+
+@main.command()
+@click.option(
+    '--path', default='.', type=click.Path(file_okay=False, exists=True),
+    help='Root of the naucse data repository')
+def ls(path):
+    """List slugs of available courses.
+    """
+    if path:
+        path = Path(path)
+
+    result = naucse_render.get_course_slugs(path=path)
 
     print(json.dumps(result, indent=4, ensure_ascii=False))

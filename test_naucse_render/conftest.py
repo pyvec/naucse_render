@@ -6,6 +6,21 @@ import yaml
 
 fixture_path = Path(__file__).parent / 'fixtures'
 
+COURSE_SLUGS_GOOD = (
+    'courses/normal-course',
+    'courses/serial-test',
+    'courses/extra-lessons',
+    'courses/flat',
+    '2000/run-without-times',
+    '2000/run-with-times',
+    '2000/run-with-timezone',
+    '2000/flat',
+    None,
+)
+
+COURSE_SLUGS_BAD = {
+    'courses/bad-serial': TypeError,
+}
 
 def assert_yaml_dump(data, filename):
     """Assert that JSON-compatible "data" matches a given YAML dump

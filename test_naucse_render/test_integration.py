@@ -8,20 +8,7 @@ import filecmp
 import naucse_render
 
 from test_naucse_render.conftest import assert_yaml_dump, fixture_path
-
-
-COURSE_SLUGS = (
-    'courses/normal-course',
-    'courses/serial-test',
-    'courses/extra-lessons',
-    'courses/flat',
-    '2000/run-without-times',
-    '2000/run-with-times',
-    '2000/run-with-timezone',
-    '2000/flat',
-    'lessons',
-    None,
-)
+from test_naucse_render.conftest import COURSE_SLUGS_GOOD, COURSE_SLUGS_BAD
 
 def assert_dirs_same(got: Path, expected: Path):
     cmp = filecmp.dircmp(got, expected, ignore=[])
@@ -59,7 +46,7 @@ def assert_cmp_same(cmp):
     for subcmp in cmp.subdirs.values():
         assert_cmp_same(subcmp)
 
-@pytest.mark.parametrize('slug', COURSE_SLUGS)
+@pytest.mark.parametrize('slug', (*COURSE_SLUGS_GOOD, 'lessons'))
 def test_render_course(slug):
     path = fixture_path / 'test_content'
     if slug is None:
@@ -70,7 +57,7 @@ def test_render_course(slug):
     assert_yaml_dump(course_info, slug + '.yaml')
 
 
-@pytest.mark.parametrize('slug', COURSE_SLUGS)
+@pytest.mark.parametrize('slug', (*COURSE_SLUGS_GOOD, 'lessons'))
 def test_compile_course(slug, tmp_path):
     path = fixture_path / 'test_content'
     if slug is None:
@@ -111,13 +98,9 @@ def test_render_lesson(slug):
     assert_yaml_dump(lesson_info, slug + '.yaml')
 
 
-@pytest.mark.parametrize(
-    ['slug', 'exception_type'],
-    [
-        ('courses/bad-serial', TypeError),
-    ],
-)
-def test_negative_course(slug, exception_type):
+@pytest.mark.parametrize('slug', COURSE_SLUGS_BAD)
+def test_negative_course(slug):
+    exception_type = COURSE_SLUGS_BAD[slug]
     path = fixture_path / 'test_content'
     with pytest.raises(exception_type):
         lesson_info = naucse_render.get_course(slug, path=str(path))

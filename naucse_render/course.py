@@ -12,6 +12,25 @@ from .load import read_yaml
 from .markdown import convert_markdown
 from .encode import encode_for_json, API_VERSION
 
+def get_course_slugs(*, path='.'):
+    """Return a list of slugs of available courses.
+    The specisl "lessons" course is not returned.
+    """
+
+    base_path = Path(path).resolve()
+    def _get_slugs():
+        if (base_path / 'course.yml').exists():
+            yield None
+        for path in base_path.glob('courses/*/info.yml'):
+            yield 'courses/' + path.parent.name
+        for path in base_path.glob('courses/*.yml'):
+            yield 'courses/' + path.stem
+        for path in base_path.glob('runs/*/*/info.yml'):
+            yield path.parent.parent.name + '/' + path.parent.name
+        for path in base_path.glob('runs/*/*.yml'):
+            yield path.parent.name + '/' +  path.stem
+    return list(_get_slugs())
+
 
 def get_course(course_slug: str = None, *, path='.', version=None):
     """Get information about the course as a JSON-compatible dict

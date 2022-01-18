@@ -6,21 +6,27 @@ naucse.python.cz JSON API.
 
 # Entrypoints
 
-There are two public entrypoints: one for getting general course information;
-the other for a subset of lessons.
+Get a list of available courses:
 
-(This separation means the content doesn't need to be rendered to get course
-info.)
+`naucse_render.get_course_slugs(*, path='.')`
+
+Get general course information:
 
 `naucse_render.get_course(course_slug, *, path='.', version=None)`
 
+Get information about lessons:
+
 `naucse_render.get_lessons(lesson_slugs, vars=None, path='.')`
+
+Compile a given course into a directory of JSON & HTML files:
+
+`def compile(slug=None, *, path='.', destination, edit_info=None)`
 
 The `path` specifies the local filesystem path to the root of the repository
 (i.e. parent directory of `courses`, `runs` and `lessons`).
 
 
-# Installation & Usage
+# Installation & CLI Usage
 
 Install the latest released version from PyPI.
 With an activated virtualenv, do:
@@ -54,6 +60,8 @@ To output metadata for a course or individual lesson(s):
 By default, data is retreived from the current working directory.
 Use the `--path` option to point naucse_render elsewhere.
 
+You can use `--help` for more info.
+
 
 ## Tests
 
@@ -83,6 +91,9 @@ licensed under the same license.
 
 ### naucse_render 1.7
 
+* Added the function `naucse.get_course_slugs()` and the CLI subcommand
+  `naucse_render ls`, which return a list of courses naucse_render can load
+  from the given directory.
 * Courses may now be specified with a "flat" file like
   `courses/<course-slug>.yml`, rather than a `info.yml` file nested in a
   directory.
