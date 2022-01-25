@@ -7,6 +7,7 @@ render info for items.
 
 from pathlib import Path
 import textwrap
+import warnings
 
 from .load import read_yaml
 from .markdown import convert_markdown
@@ -24,6 +25,14 @@ def get_course_slugs(*, path='.'):
         for path in base_path.glob('courses/*/info.yml'):
             yield 'courses/' + path.parent.name
         for path in base_path.glob('courses/*.yml'):
+            if path.name == 'info.yml':
+                # `courses/info.yml` was used for ordering featured courses,
+                # so it won't contain a course.
+                # Remove this edge case in 2.0+.
+                warnings.warn(
+                    f'{path.resolve()} is not considered a course definition'
+                )
+                continue
             yield 'courses/' + path.stem
         for path in base_path.glob('runs/*/*/info.yml'):
             yield path.parent.parent.name + '/' + path.parent.name

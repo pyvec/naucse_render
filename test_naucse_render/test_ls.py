@@ -1,6 +1,8 @@
 import json
+import shutil
 
 from click.testing import CliRunner
+import pytest
 
 import naucse_render
 from naucse_render.cli import ls
@@ -22,3 +24,13 @@ def test_ls_cli(monkeypatch):
     result = runner.invoke(ls)
     assert result.exit_code == 0
     assert set(json.loads(result.output)) == COURSE_SLUGS_ALL
+
+
+def test_ls_ignores_courses_info(tmp_path):
+    shutil.copytree(fixture_path / 'test_content', tmp_path / 'content')
+    (tmp_path / 'content/courses/info.yml').write_text(
+        'ignored: true',
+    )
+    with pytest.warns(UserWarning):
+        result = naucse_render.get_course_slugs(path=tmp_path / 'content')
+    assert set(result) == COURSE_SLUGS_ALL
