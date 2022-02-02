@@ -1,3 +1,5 @@
+import logging
+import traceback
 from textwrap import dedent
 import re
 
@@ -147,6 +149,13 @@ class Renderer(mistune.Renderer):
         return super().image(self._convert_url(src), title, text)
 
 
+def check_python_code_validity(code: str, execute=False):
+    compiled = compile(code, "fake-file", "exec")
+
+    if execute:
+        exec(compiled)
+
+
 class Markdown(mistune.Markdown):
     def output_admonition(self):
         name = self.token['name']
@@ -157,6 +166,19 @@ class Markdown(mistune.Markdown):
         while self.pop()['type'] != 'admonition_end':
             body += self.tok()
         return self.renderer.admonition(name, body)
+
+    def output_code(self):
+        text = self.token['text']
+        lang = self.token['lang']
+
+        if lang.lower() == "python":
+            try:
+                check_python_code_validity(text, execute=True)
+            except BaseException:
+                logging.warning(f"Code {text} raises an error when compiled/executed: "
+                                f"{traceback.format_exc()}")
+
+        return self.renderer.block_code(text, lang)
 
     def output_deflist_term(self):
         items = [['term', self.renderer.placeholder()]]
