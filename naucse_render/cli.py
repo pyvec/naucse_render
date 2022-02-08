@@ -49,7 +49,7 @@ def compile(
         for slug in naucse_render.get_course_slugs(path=path):
             if slug is None:
                 click.fail('Cannot use --all with a default course.')
-            slug = slug.removeprefix('courses/')
+            slug = removeprefix(slug, 'courses/')
             naucse_render.compile(
                 slug=slug,
                 path=path,
@@ -63,6 +63,12 @@ def compile(
             destination=destination,
             edit_info=edit_info,
         )
+
+def removeprefix(string, prefix):
+    """str.removeprefix(). Remove when support for Python 3.8 is droped."""
+    if string.startswith(prefix):
+        return string[len(prefix):]
+    return string
 
 @main.command()
 @click.argument('slug', metavar='SLUG', default=None)
