@@ -89,6 +89,16 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.8
+
+* `naucse_render compile` now supports the `--all` switch, which
+  compiles all available courses to directories under the
+  destination directory.
+  This is now the default when `--slug` is not given and a default course
+  is not found.
+  This change should allow using a common CI config for all repos with
+  course definitions.
+
 ### naucse_render 1.7
 
 * Added the function `naucse.get_course_slugs()` and the CLI subcommand
