@@ -7,7 +7,7 @@ with open('README.md') as f:
 
 setup(
     name='naucse_render',
-    version='1.7',
+    version='1.8',
     description='Converts course material to naucse.python.cz API',
     long_description=long_description,
     long_description_content_type="text/markdown",

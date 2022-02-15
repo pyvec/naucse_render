@@ -98,6 +98,8 @@ licensed under the same license.
   is not found.
   This change should allow using a common CI config for all repos with
   course definitions.
+* Anchors are now automatically added to all headers, making it possible to
+  link to individual sections. (thanks to Jakub Beránek)
 
 ### naucse_render 1.7
 
