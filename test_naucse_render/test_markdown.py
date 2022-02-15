@@ -73,7 +73,7 @@ def test_markdown_header_anchor():
         # Čárky a háčky
     """)
     expected = """<h1 id="carky_a_hacky">Čárky a háčky
-<a href="#carky_a_hacky" class="permanent-link">#</a>
+<a href="#header-carky_a_hacky" class="header-link">#</a>
 </h1>"""
     assert convert_markdown(src) == expected
 

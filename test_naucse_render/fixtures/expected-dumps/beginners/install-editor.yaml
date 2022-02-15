@@ -8,17 +8,17 @@ data:
                 attribution:
                 - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
                 content: "<h1 id=\"instalace_atomu\">Instalace  Atomu\n<a href=\"\
-                    #instalace_atomu\" class=\"permanent-link\">#</a>\n</h1>\n<p>Editor\
-                    \ Atom\nsi st\xE1hni z\_jeho <a href=\"https://atom.io\">domovsk\xE9\
-                    \ str\xE1nky</a>\na nainstaluj.</p>\n<h2 id=\"nastaveni\">Nastaven\xED\
-                    \n<a href=\"#nastaveni\" class=\"permanent-link\">#</a>\n</h2>\n\
-                    <p>... jakmile v\_tomhle editoru vytvo\u0159\xED\u0161 nov\xFD\
-                    \ soubor,\nm\u011Bl/a bys ho co nejd\u0159\xEDv ulo\u017Eit pod\
-                    \ spr\xE1vn\xFDm jm\xE9nem.</p>\n<h2 id=\"kontrola_stylu_zdrojoveho_kodu\"\
-                    >Kontrola stylu zdrojov\xE9ho k\xF3du\n<a href=\"#kontrola_stylu_zdrojoveho_kodu\"\
-                    \ class=\"permanent-link\">#</a>\n</h2>\n<p>...</p>\n<h2 id=\"\
-                    nacvik_odsazovani\">N\xE1cvik odsazov\xE1n\xED\n<a href=\"#nacvik_odsazovani\"\
-                    \ class=\"permanent-link\">#</a>\n</h2>\n<p>...</p>"
+                    #header-instalace_atomu\" class=\"header-link\">#</a>\n</h1>\n\
+                    <p>Editor Atom\nsi st\xE1hni z\_jeho <a href=\"https://atom.io\"\
+                    >domovsk\xE9 str\xE1nky</a>\na nainstaluj.</p>\n<h2 id=\"nastaveni\"\
+                    >Nastaven\xED\n<a href=\"#header-nastaveni\" class=\"header-link\"\
+                    >#</a>\n</h2>\n<p>... jakmile v\_tomhle editoru vytvo\u0159\xED\
+                    \u0161 nov\xFD soubor,\nm\u011Bl/a bys ho co nejd\u0159\xEDv ulo\u017E\
+                    it pod spr\xE1vn\xFDm jm\xE9nem.</p>\n<h2 id=\"kontrola_stylu_zdrojoveho_kodu\"\
+                    >Kontrola stylu zdrojov\xE9ho k\xF3du\n<a href=\"#header-kontrola_stylu_zdrojoveho_kodu\"\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<h2 id=\"nacvik_odsazovani\"\
+                    >N\xE1cvik odsazov\xE1n\xED\n<a href=\"#header-nacvik_odsazovani\"\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>"
                 license: cc-by-sa-40
                 slug: atom
                 solutions: []
@@ -29,9 +29,9 @@ data:
                 attribution:
                 - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
                 content: "<h1 id=\"instalace_geditu\">Instalace  Geditu\n<a href=\"\
-                    #instalace_geditu\" class=\"permanent-link\">#</a>\n</h1>\n<p>Na\
-                    \ Linuxu se Gedit instaluje jako ostatn\xED programy:</p>\n<dl>\n\
-                    <dt></dt><dt>Fedora</dt><dd><div class=\"highlight\"><pre><span></span><span\
+                    #header-instalace_geditu\" class=\"header-link\">#</a>\n</h1>\n\
+                    <p>Na Linuxu se Gedit instaluje jako ostatn\xED programy:</p>\n\
+                    <dl>\n<dt></dt><dt>Fedora</dt><dd><div class=\"highlight\"><pre><span></span><span\
                     \ class=\"gp\">$ </span>sudo dnf install gedit\n</pre></div></dd><dt></dt><dt>Ubuntu</dt><dd><div\
                     \ class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>sudo\
                     \ apt-get install gedit\n</pre></div></dd></dl><p>Pou\u017E\xED\
@@ -39,16 +39,16 @@ data:
                     \ programy instalovat um\xED\u0161. :)</p>\n<p>Pro Windows a macOS\
                     \ se Gedit d\xE1 st\xE1hnout z\_<a href=\"https://wiki.gnome.org/Apps/Gedit\"\
                     >domovsk\xE9 str\xE1nky</a>.</p>\n<h2 id=\"nastaveni\">Nastaven\xED\
-                    \n<a href=\"#nastaveni\" class=\"permanent-link\">#</a>\n</h2>\n\
-                    <p>...</p>\n<dl>\n<dt></dt><dt>\u010C\xEDslov\xE1n\xED \u0159\xE1\
-                    dk\u016F</dt><dd><p>V\_sekci Zobrazit/<span class=\"en\">View</span>\
-                    \ vyber\nZobrazovat \u010D\xEDsla \u0159\xE1dk\u016F/<span class=\"\
-                    en\">Display Line Numbers</span>.</p>\n<p><span class=\"figure\"\
-                    ><a href=\"naucse:static?filename=gedit_linenums.png\"><img src=\"\
-                    naucse:static?filename=gedit_linenums.png\" alt=\"\"></a></span></p>\n\
-                    </dd></dl><p>...</p>\n<h2 id=\"nacvik_odsazovani\">N\xE1cvik odsazov\xE1\
-                    n\xED\n<a href=\"#nacvik_odsazovani\" class=\"permanent-link\"\
-                    >#</a>\n</h2>\n<p>...</p>"
+                    \n<a href=\"#header-nastaveni\" class=\"header-link\">#</a>\n\
+                    </h2>\n<p>...</p>\n<dl>\n<dt></dt><dt>\u010C\xEDslov\xE1n\xED\
+                    \ \u0159\xE1dk\u016F</dt><dd><p>V\_sekci Zobrazit/<span class=\"\
+                    en\">View</span> vyber\nZobrazovat \u010D\xEDsla \u0159\xE1dk\u016F\
+                    /<span class=\"en\">Display Line Numbers</span>.</p>\n<p><span\
+                    \ class=\"figure\"><a href=\"naucse:static?filename=gedit_linenums.png\"\
+                    ><img src=\"naucse:static?filename=gedit_linenums.png\" alt=\"\
+                    \"></a></span></p>\n</dd></dl><p>...</p>\n<h2 id=\"nacvik_odsazovani\"\
+                    >N\xE1cvik odsazov\xE1n\xED\n<a href=\"#header-nacvik_odsazovani\"\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>"
                 license: cc-by-sa-40
                 slug: gedit
                 solutions: []
@@ -59,8 +59,8 @@ data:
                 attribution:
                 - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
                 content: "<p>...</p>\n<h2 id=\"co_programatorsky_editor_umi\">Co program\xE1\
-                    torsk\xFD editor um\xED\n<a href=\"#co_programatorsky_editor_umi\"\
-                    \ class=\"permanent-link\">#</a>\n</h2>\n<p>...</p>\n<dl>\n<dt></dt><dt>Podpora\
+                    torsk\xFD editor um\xED\n<a href=\"#header-co_programatorsky_editor_umi\"\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<dl>\n<dt></dt><dt>Podpora\
                     \ v\xEDce soubor\u016F</dt><dd><p>V\u011Bt\u0161\xED projekty\
                     \ sest\xE1vaj\xED z\_v\xEDce soubor\u016F, kter\xE9 m\u016F\u017E\
                     e\u0161 m\xEDt v\_editoru\notev\u0159en\xE9 v\u0161echny najednou.</p>\n\
@@ -78,8 +78,8 @@ data:
                     \ class=\"p\">(</span><span class=\"n\">course</span><span class=\"\
                     p\">):</span>\n    <span class=\"mi\">3</span>      <span class=\"\
                     o\">...</span>\n</pre></div></div><h2 id=\"volba_a_nastaveni_editoru\"\
-                    >Volba a nastaven\xED editoru\n<a href=\"#volba_a_nastaveni_editoru\"\
-                    \ class=\"permanent-link\">#</a>\n</h2>\n<p>...</p>\n<ul>\n<li><a\
+                    >Volba a nastaven\xED editoru\n<a href=\"#header-volba_a_nastaveni_editoru\"\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<ul>\n<li><a\
                     \ href=\"naucse:page?lesson=beginners/install-editor&amp;page=atom\"\
                     >Atom</a> \u2013 doporu\u010Den\xFD editor pro\nWindows a macOS.</li>\n\
                     </ul>\n<p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=gedit\"\
