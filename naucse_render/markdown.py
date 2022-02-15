@@ -1,3 +1,4 @@
+import unicodedata
 from textwrap import dedent
 import re
 
@@ -107,6 +108,27 @@ def get_lexer_by_name(lang):
     return pygments.lexers.get_lexer_by_name(lang)
 
 
+# https://stackoverflow.com/a/31607735/1107768
+def strip_accents(text: str) -> str:
+    """
+    Strip accents from input string.
+    """
+    text = unicodedata.normalize('NFD', text)
+    text = text.encode('ascii', 'ignore')
+    text = text.decode("utf-8")
+    return str(text)
+
+
+def text_to_id(text):
+    """
+    Convert input text to id.
+    """
+    text = strip_accents(text.lower())
+    text = re.sub('[ ]+', '_', text)
+    text = re.sub('[^0-9a-zA-Z_-]', '', text)
+    return text
+
+
 class Renderer(mistune.Renderer):
     code_tmpl = '<div class="highlight"><pre><code>{}</code></pre></div>'
 
@@ -116,6 +138,12 @@ class Renderer(mistune.Renderer):
 
     def admonition(self, name, content):
         return '<div class="admonition {}">{}</div>'.format(name, content)
+
+    def header(self, text, level, raw=None):
+        header_id = text_to_id(text)
+        return f'''<h{level:d} id="{header_id}">{text}
+<a href="#header-{header_id}" class="header-link">#</a>
+</h{level:d}>\n'''
 
     def block_code(self, code, lang):
         if lang is not None:
