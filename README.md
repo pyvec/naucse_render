@@ -89,6 +89,10 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.9
+
+* `naucse_render` now works with current releases of Jinja2.
+
 ### naucse_render 1.8
 
 * `naucse_render compile` now supports the `--all` switch, which
