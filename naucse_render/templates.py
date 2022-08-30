@@ -1,6 +1,7 @@
 import textwrap
 
 import jinja2
+from markupsafe import Markup
 
 from .markdown import convert_markdown
 
@@ -24,7 +25,7 @@ def template_function(name=None):
 
 
 @template_filter()
-@jinja2.contextfilter
+@jinja2.pass_context
 def markdown(ctx, text, inline=False):
     return ctx['$markdown'](text, inline=inline)
 
@@ -44,7 +45,7 @@ def extract_part(text, part, delimiter):
 
 
 @template_filter()
-@jinja2.contextfilter
+@jinja2.pass_context
 def solution(ctx, text):
     """A solution to a problem.
 
@@ -66,7 +67,7 @@ def solution(ctx, text):
     solution = ctx['$markdown'](text)
     solutions.append(solution)
 
-    return jinja2.Markup(textwrap.dedent("""
+    return Markup(textwrap.dedent("""
         <div class="solution" id="solution-{}">
             <h3>Řešení</h3>
             <div class="solution-cover">
@@ -127,7 +128,7 @@ def vars_functions(vars):
 
 @template_function()
 def anchor(name):
-    return jinja2.Markup('<a id="{}"></a>').format(name)
+    return Markup('<a id="{}"></a>').format(name)
 
 
 @template_function()
@@ -139,7 +140,7 @@ def figure(img, alt, float=None):
         classes.append('float-right')
     elif float is not None:
         raise ValueError('bad float: {}'.format(float))
-    t = jinja2.Markup(''.join(p.strip() for p in """
+    t = Markup(''.join(p.strip() for p in """
         <span class="{classes}">
             <a href="{img}">
                 <img src="{img}" alt="{alt}">

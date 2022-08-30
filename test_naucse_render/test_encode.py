@@ -2,7 +2,7 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 import datetime
 
 import pytest
-from jinja2 import Markup
+from markupsafe import Markup
 
 from naucse_render.encode import encode_for_json
 

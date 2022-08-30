@@ -33,8 +33,9 @@ setup(
         'traitlets',
         'click',
         'PyYAML',
-        'Jinja2',
+        'Jinja2>3.0',
         'Pygments>=2.3.1',
+        'markupsafe',
     ],
     extras_require={
         'dev': ['pytest'],

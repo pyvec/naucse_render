@@ -4,7 +4,7 @@ import re
 
 from ansi2html import Ansi2HTMLConverter
 import mistune
-from jinja2 import Markup
+from markupsafe import Markup
 import pygments
 import pygments.lexers
 from pygments.lexer import RegexLexer, bygroups

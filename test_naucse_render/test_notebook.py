@@ -57,7 +57,7 @@ def test_notebook_has_highlighted_input_area(notebook):
         <div class=" highlight hl-ipython3">
         <pre>
         <span></span><span class="nb">print</span><span class="p">(</span>
-        <span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+        <span class="s1">'foo'</span><span class="p">)</span>
         <span class="mi">5</span> <span class="o">+</span>
          <span class="mi">2</span>
         </pre>
