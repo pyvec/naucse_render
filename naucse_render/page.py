@@ -1,10 +1,12 @@
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse
+from itertools import chain
 import types
 import sys
 import re
 
 import jinja2
+import lxml.html
 
 from .templates import environment, vars_functions
 from .markdown import convert_markdown
@@ -167,4 +169,25 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
     if 'latex' in info:
         page['modules'] = {'katex': '0.7.1'}
 
+    # All links
+    page.update(get_links(text, f'{lesson_slug}/{page_slug}'))
+
     return encode_for_json(page)
+
+def get_links(text, slug):
+    links = set()
+    ids = set()
+    result = {'links': links, 'ids': ids}
+    for fragment in lxml.html.fragments_fromstring(text):
+        for element in chain([fragment], fragment.iterdescendants()):
+            for name in 'href', 'src':
+                link = element.attrib.get(name, None)
+                if link:
+                    links.add(link)
+            id_attr = element.attrib.get('id', None)
+            if id_attr:
+                if id_attr in ids:
+                    raise ValueError(f'Duplicate id {id_attr!r} in page {slug}')
+                ids.add(id_attr)
+    return {'links': sorted(links), 'ids': sorted(ids)}
+

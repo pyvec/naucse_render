@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 data:
     homework/tasks:
         pages:
@@ -12,7 +12,10 @@ data:
                     </ul>\n    </li>\n\n    <li>\n        <p>Static files handled\
                     \ with a <img src=\"naucse:static?filename=smile.png\" alt=\"\
                     smile\">.</p>\n    </li>\n\n</ol>"
+                ids: []
                 license: cc-by-sa-40
+                links:
+                - naucse:static?filename=smile.png
                 slug: index
                 solutions: []
                 source_file: lessons/homework/tasks/index.md

@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 data:
     testcases/test_subpages:
         pages:
@@ -8,7 +8,9 @@ data:
                 attribution:
                 - Petr Viktorin
                 content: <p>This has both an explicit title and subtitle.</p>
+                ids: []
                 license: cc0
+                links: []
                 slug: both-titles
                 solutions: []
                 source_file: lessons/testcases/test_subpages/both-titles.md
@@ -21,7 +23,12 @@ data:
                 content: <p>This is the main page with links to subpages <a href="naucse:page?lesson=testcases/test_subpages&amp;page=titled">one</a>,
                     <a href="naucse:page?lesson=testcases/test_subpages&amp;page=subtitled">two</a>
                     and <a href="naucse:page?lesson=testcases/test_subpages&amp;page=both-titles">three</a>.</p>
+                ids: []
                 license: cc0
+                links:
+                - naucse:page?lesson=testcases/test_subpages&page=both-titles
+                - naucse:page?lesson=testcases/test_subpages&page=subtitled
+                - naucse:page?lesson=testcases/test_subpages&page=titled
                 slug: index
                 solutions: []
                 source_file: lessons/testcases/test_subpages/index.md
@@ -31,7 +38,9 @@ data:
                 attribution:
                 - Petr Viktorin
                 content: <p>This has an explicit subtitle.</p>
+                ids: []
                 license: cc0
+                links: []
                 slug: subtitled
                 solutions: []
                 source_file: lessons/testcases/test_subpages/subtitled.md
@@ -42,7 +51,9 @@ data:
                 attribution:
                 - Petr Viktorin
                 content: <p>This has an explicit title.</p>
+                ids: []
                 license: cc0
+                links: []
                 slug: titled
                 solutions: []
                 source_file: lessons/testcases/test_subpages/titled.md

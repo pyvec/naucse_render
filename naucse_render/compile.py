@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import shutil
+from urllib.parse import urlsplit, parse_qsl, urlunsplit
 
 from .course import get_course
 from .lesson import get_lessons
@@ -47,6 +48,8 @@ def compile(slug=None, *, path='.', destination, edit_info=None):
             )
         else:
             shutil.rmtree(destination)
+
+    check_lesson_links(course_info)
 
     externalize_content(course_info, destination, path)
 
@@ -100,3 +103,43 @@ def externalize_content(course_info, destination, source_path):
             filename.parent.mkdir(exist_ok=True, parents=True)
             filename.write_bytes(content)
             file_info['path'] = str(filename.relative_to(destination))
+
+
+def check_lesson_links(course_info):
+    for lesson_slug, lesson_info in course_info.get('lessons', {}).items():
+        for page_name, page_info in lesson_info.get('pages', {}).items():
+            for link in page_info['links']:
+                check_lesson_link(urlsplit(link), course_info, lesson_slug)
+
+
+def check_lesson_link(parsed_url, course_info, src_lesson_slug):
+    """Check that the given link is included in the course"""
+    if parsed_url.scheme == 'naucse':
+        query = dict(parse_qsl(parsed_url.query))
+        if parsed_url.path == 'page':
+            lesson_slug = query['lesson']
+            try:
+                target_lesson = course_info['lessons'][lesson_slug]
+            except KeyError:
+                raise KeyError(
+                    f"{src_lesson_slug} links to lesson {lesson_slug}, which is not available. Perhaps add it to extra_lessons?")
+            page_slug = query.get('page', 'index')
+            try:
+                target_page = target_lesson['pages'][page_slug]
+            except KeyError:
+                raise KeyError(
+                    f"{src_lesson_slug} links to missing {page_slug} of lesson {lesson_slug}")
+            fragment = parsed_url.fragment
+            if fragment:
+                if fragment not in target_page['ids']:
+                    raise ValueError(
+                        f"{src_lesson_slug} links to #{fragment} in {page_slug} of lesson {lesson_slug}, but there is no such `id` in {target_page['ids']}")
+        elif parsed_url.path == 'static':
+            filename = query['filename']
+            if filename not in course_info['lessons'][src_lesson_slug]['static_files']:
+                raise KeyError(
+                    f"{src_lesson_slug} links to missing static file {filename}")
+        elif parsed_url.path == 'solution':
+            pass
+        else:
+            raise ValueError(f'Unknown naucse link: {urlunsplit(parsed_url)} in {src_lesson_slug}')

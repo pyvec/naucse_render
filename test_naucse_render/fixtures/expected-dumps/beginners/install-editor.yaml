@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 data:
     beginners/install-editor:
         pages:
@@ -19,7 +19,18 @@ data:
                     \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<h2 id=\"nacvik_odsazovani\"\
                     >N\xE1cvik odsazov\xE1n\xED\n<a href=\"#header-nacvik_odsazovani\"\
                     \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>"
+                ids:
+                - instalace_atomu
+                - kontrola_stylu_zdrojoveho_kodu
+                - nacvik_odsazovani
+                - nastaveni
                 license: cc-by-sa-40
+                links:
+                - '#header-instalace_atomu'
+                - '#header-kontrola_stylu_zdrojoveho_kodu'
+                - '#header-nacvik_odsazovani'
+                - '#header-nastaveni'
+                - https://atom.io
                 slug: atom
                 solutions: []
                 source_file: lessons/beginners/install-editor/atom.md
@@ -49,7 +60,17 @@ data:
                     \"></a></span></p>\n</dd></dl><p>...</p>\n<h2 id=\"nacvik_odsazovani\"\
                     >N\xE1cvik odsazov\xE1n\xED\n<a href=\"#header-nacvik_odsazovani\"\
                     \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>"
+                ids:
+                - instalace_geditu
+                - nacvik_odsazovani
+                - nastaveni
                 license: cc-by-sa-40
+                links:
+                - '#header-instalace_geditu'
+                - '#header-nacvik_odsazovani'
+                - '#header-nastaveni'
+                - https://wiki.gnome.org/Apps/Gedit
+                - naucse:static?filename=gedit_linenums.png
                 slug: gedit
                 solutions: []
                 source_file: lessons/beginners/install-editor/gedit.md
@@ -84,8 +105,18 @@ data:
                     >Atom</a> \u2013 doporu\u010Den\xFD editor pro\nWindows a macOS.</li>\n\
                     </ul>\n<p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=gedit\"\
                     >Gedit</a> \u2013 b\xFDv\xE1 na syst\xE9mech s\_prost\u0159ed\xED\
-                    m GNOME.</li>\n</ul>\n<p>...</p>"
+                    m GNOME.<ul>\n<li>M\u016F\u017Eeme odk\xE1zat na <a href=\"naucse:page?lesson=beginners/install-editor&amp;page=gedit#nacvik_odsazovani\"\
+                    >N\xE1cvik odsazov\xE1n\xED</a>.</li>\n</ul>\n</li>\n</ul>\n<p>...</p>"
+                ids:
+                - co_programatorsky_editor_umi
+                - volba_a_nastaveni_editoru
                 license: cc-by-sa-40
+                links:
+                - '#header-co_programatorsky_editor_umi'
+                - '#header-volba_a_nastaveni_editoru'
+                - naucse:page?lesson=beginners/install-editor&page=atom
+                - naucse:page?lesson=beginners/install-editor&page=gedit
+                - naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani
                 slug: index
                 solutions: []
                 source_file: lessons/beginners/install-editor/index.md
