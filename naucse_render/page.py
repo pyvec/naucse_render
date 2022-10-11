@@ -186,8 +186,6 @@ def get_links(text, slug):
                     links.add(link)
             id_attr = element.attrib.get('id', None)
             if id_attr:
-                if id_attr in ids:
-                    raise ValueError(f'Duplicate id {id_attr!r} in page {slug}')
                 ids.add(id_attr)
     return {'links': sorted(links), 'ids': sorted(ids)}
 
