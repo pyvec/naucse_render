@@ -83,6 +83,8 @@ def test_destination_regular_file(tmp_path):
     ('{{static("bad.png")}}', 'missing static file bad.png'),
     ('{{lesson_url("beginners/install-editor")}}#bad_id',
      'testcases/bad_link links to #bad_id in index of lesson beginners/install-editor'),
+    ('#bad_id',
+     'index of lesson testcases/bad_link links to #bad_id, but there is no such `id`'),
 ))
 def test_bad_link(tmp_path, bad_link, expected_msg):
     """A bad link raises"""

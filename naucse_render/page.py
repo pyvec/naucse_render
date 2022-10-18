@@ -169,8 +169,16 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
     if 'latex' in info:
         page['modules'] = {'katex': '0.7.1'}
 
-    # All links
+    # Add links
     page.update(get_links(text, f'{lesson_slug}/{page_slug}'))
+    # Check links within page
+    for url in page['links']:
+        parsed = urlparse(url)
+        if parsed.scheme or parsed.netloc or parsed.path:
+            continue
+        if parsed.fragment and parsed.fragment not in page['ids']:
+            raise ValueError(
+                f"{page_slug} of lesson {lesson_slug} links to #{parsed.fragment}, but there is no such `id` in {page['ids']}")
 
     return encode_for_json(page)
 

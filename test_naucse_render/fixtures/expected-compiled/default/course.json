@@ -22,10 +22,10 @@
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
-                            "#header-instalace_atomu",
-                            "#header-kontrola_stylu_zdrojoveho_kodu",
-                            "#header-nacvik_odsazovani",
-                            "#header-nastaveni",
+                            "#instalace_atomu",
+                            "#kontrola_stylu_zdrojoveho_kodu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
                             "https://atom.io"
                         ],
                         "slug": "atom",
@@ -48,9 +48,9 @@
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
-                            "#header-instalace_geditu",
-                            "#header-nacvik_odsazovani",
-                            "#header-nastaveni",
+                            "#instalace_geditu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
                             "https://wiki.gnome.org/Apps/Gedit",
                             "naucse:static?filename=gedit_linenums.png"
                         ],
@@ -73,8 +73,8 @@
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
-                            "#header-co_programatorsky_editor_umi",
-                            "#header-volba_a_nastaveni_editoru",
+                            "#co_programatorsky_editor_umi",
+                            "#volba_a_nastaveni_editoru",
                             "naucse:page?lesson=beginners/install-editor&page=atom",
                             "naucse:page?lesson=beginners/install-editor&page=gedit",
                             "naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani"

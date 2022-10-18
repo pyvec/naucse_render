@@ -142,7 +142,7 @@ class Renderer(mistune.Renderer):
     def header(self, text, level, raw=None):
         header_id = text_to_id(text)
         return f'''<h{level:d} id="{header_id}">{text}
-<a href="#header-{header_id}" class="header-link">#</a>
+<a href="#{header_id}" class="header-link">#</a>
 </h{level:d}>\n'''
 
     def block_code(self, code, lang):
