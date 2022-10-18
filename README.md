@@ -89,6 +89,19 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 1.10
+
+* `naucse_render compile` now checks for links to missing lessons and
+  non-existent `id`s in lessons. It fails if one is found.
+
+* Fixed links after headings
+
+* API version 0.4
+  * Each page of a lesson now has a `links` entry with a list of all links
+    found on the page.
+  * Each page of a lesson now has a `ids` entry with a list of all `id`
+    attributes found on the page.
+
 ### naucse_render 1.9
 
 * `naucse_render` now works with current releases of Jinja2.

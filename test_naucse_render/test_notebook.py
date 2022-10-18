@@ -33,7 +33,7 @@ def notebook(_notebook):
 def test_notebook_markdown_cell_conversion(notebook):
     markdown = dedent(r"""
         <h2 id="markdown">Markdown
-        <a href="#header-markdown" class="header-link">#</a>
+        <a href="#markdown" class="header-link">#</a>
         </h2>
         <p>This is <em>Markdown cell</em>!</p>
         <p>It even has some $\LaTeX$:</p>

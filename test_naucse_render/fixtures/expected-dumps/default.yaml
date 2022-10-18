@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 course:
     long_description: <p>A <em>very</em> long description</p>
     sessions:

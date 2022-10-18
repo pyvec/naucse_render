@@ -36,5 +36,6 @@ Podpora více souborů
 ...
 
 * [Gedit]({{ subpage_url('gedit') }}) – bývá na systémech s prostředím GNOME.
+  * Můžeme odkázat na [Nácvik odsazování]({{ subpage_url('gedit') }}#nacvik_odsazovani).
 
 ...

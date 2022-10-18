@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        3
+        4
     ],
     "course": {
         "description": "Seznam udržovaných lekcí bez ladu a skladu.",
@@ -15,7 +15,20 @@
                         "content": {
                             "path": "install-editor/atom.html"
                         },
+                        "ids": [
+                            "instalace_atomu",
+                            "kontrola_stylu_zdrojoveho_kodu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_atomu",
+                            "#kontrola_stylu_zdrojoveho_kodu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://atom.io"
+                        ],
                         "slug": "atom",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/atom.md",
@@ -29,7 +42,19 @@
                         "content": {
                             "path": "install-editor/gedit.html"
                         },
+                        "ids": [
+                            "instalace_geditu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_geditu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://wiki.gnome.org/Apps/Gedit",
+                            "naucse:static?filename=gedit_linenums.png"
+                        ],
                         "slug": "gedit",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/gedit.md",
@@ -43,7 +68,18 @@
                         "content": {
                             "path": "install-editor/index.html"
                         },
+                        "ids": [
+                            "co_programatorsky_editor_umi",
+                            "volba_a_nastaveni_editoru"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#co_programatorsky_editor_umi",
+                            "#volba_a_nastaveni_editoru",
+                            "naucse:page?lesson=beginners/install-editor&page=atom",
+                            "naucse:page?lesson=beginners/install-editor&page=gedit",
+                            "naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/index.md",
@@ -68,7 +104,9 @@
                         "content": {
                             "path": "install-editor/index.1.html"
                         },
+                        "ids": [],
                         "license": "cc-0",
+                        "links": [],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/duplicate/install-editor/index.md",
@@ -89,7 +127,11 @@
                         "content": {
                             "path": "tasks/index.html"
                         },
+                        "ids": [],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "naucse:static?filename=smile.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/homework/tasks/index.md",
@@ -114,7 +156,11 @@
                         "content": {
                             "path": "test_static_tree/index.html"
                         },
+                        "ids": [],
                         "license": "cc0",
+                        "links": [
+                            "naucse:static?filename=directory/smile.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/testcases/test_static_tree/index.md",
@@ -139,7 +185,9 @@
                         "content": {
                             "path": "test_subpages/both-titles.html"
                         },
+                        "ids": [],
                         "license": "cc0",
+                        "links": [],
                         "slug": "both-titles",
                         "solutions": [],
                         "source_file": "lessons/testcases/test_subpages/both-titles.md",
@@ -154,7 +202,13 @@
                         "content": {
                             "path": "test_subpages/index.html"
                         },
+                        "ids": [],
                         "license": "cc0",
+                        "links": [
+                            "naucse:page?lesson=testcases/test_subpages&page=both-titles",
+                            "naucse:page?lesson=testcases/test_subpages&page=subtitled",
+                            "naucse:page?lesson=testcases/test_subpages&page=titled"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/testcases/test_subpages/index.md",
@@ -168,7 +222,9 @@
                         "content": {
                             "path": "test_subpages/subtitled.html"
                         },
+                        "ids": [],
                         "license": "cc0",
+                        "links": [],
                         "slug": "subtitled",
                         "solutions": [],
                         "source_file": "lessons/testcases/test_subpages/subtitled.md",
@@ -183,7 +239,9 @@
                         "content": {
                             "path": "test_subpages/titled.html"
                         },
+                        "ids": [],
                         "license": "cc0",
+                        "links": [],
                         "slug": "titled",
                         "solutions": [],
                         "source_file": "lessons/testcases/test_subpages/titled.md",

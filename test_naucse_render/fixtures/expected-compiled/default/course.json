@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        3
+        4
     ],
     "course": {
         "lessons": {
@@ -14,7 +14,20 @@
                         "content": {
                             "path": "install-editor/atom.html"
                         },
+                        "ids": [
+                            "instalace_atomu",
+                            "kontrola_stylu_zdrojoveho_kodu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_atomu",
+                            "#kontrola_stylu_zdrojoveho_kodu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://atom.io"
+                        ],
                         "slug": "atom",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/atom.md",
@@ -28,7 +41,19 @@
                         "content": {
                             "path": "install-editor/gedit.html"
                         },
+                        "ids": [
+                            "instalace_geditu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_geditu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://wiki.gnome.org/Apps/Gedit",
+                            "naucse:static?filename=gedit_linenums.png"
+                        ],
                         "slug": "gedit",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/gedit.md",
@@ -42,7 +67,18 @@
                         "content": {
                             "path": "install-editor/index.html"
                         },
+                        "ids": [
+                            "co_programatorsky_editor_umi",
+                            "volba_a_nastaveni_editoru"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#co_programatorsky_editor_umi",
+                            "#volba_a_nastaveni_editoru",
+                            "naucse:page?lesson=beginners/install-editor&page=atom",
+                            "naucse:page?lesson=beginners/install-editor&page=gedit",
+                            "naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/index.md",
@@ -67,7 +103,9 @@
                         "content": {
                             "path": "install-editor/index.1.html"
                         },
+                        "ids": [],
                         "license": "cc-0",
+                        "links": [],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/duplicate/install-editor/index.md",

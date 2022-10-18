@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        3
+        4
     ],
     "course": {
         "extra_lessons": [
@@ -18,7 +18,9 @@
                         "content": {
                             "path": "install-editor/index.html"
                         },
+                        "ids": [],
                         "license": "cc-0",
+                        "links": [],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/duplicate/install-editor/index.md",
@@ -39,7 +41,11 @@
                         "content": {
                             "path": "tasks/index.html"
                         },
+                        "ids": [],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "naucse:static?filename=smile.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/homework/tasks/index.md",

@@ -1,5 +1,7 @@
 import json
+import shutil
 
+import yaml
 import pytest
 
 import naucse_render
@@ -71,4 +73,44 @@ def test_destination_regular_file(tmp_path):
     destination = tmp_path / 'file'
     destination.write_text('test')
     with pytest.raises(NotADirectoryError):
+        naucse_render.compile(path=path, destination=destination)
+
+
+@pytest.mark.parametrize(['bad_link', 'expected_msg'], (
+    ('{{lesson_url("nowhere")}}', 'Perhaps add it to extra_lessons?'),
+    ('{{lesson_url("testcases/bad_link", page="bad_subpage")}}',
+     'missing bad_subpage of lesson testcases/bad_link'),
+    ('{{static("bad.png")}}', 'missing static file bad.png'),
+    ('{{lesson_url("beginners/install-editor")}}#bad_id',
+     'testcases/bad_link links to #bad_id in index of lesson beginners/install-editor'),
+    ('#bad_id',
+     'index of lesson testcases/bad_link links to #bad_id, but there is no such `id`'),
+))
+def test_bad_link(tmp_path, bad_link, expected_msg):
+    """A bad link raises"""
+    path = tmp_path / 'content'
+    shutil.copytree(fixture_path / 'test_content', path)
+    with open(path / 'course.yml', 'w') as f:
+        yaml.safe_dump({
+            'title': 'A course with a bad link',
+            'sessions': [{
+                'title': 'Session 1',
+                'slug': 'session1',
+                'materials': [{'lesson': 'testcases/bad_link'}],
+            }],
+            'extra_lessons': ['beginners/install-editor'],
+        }, f)
+    lesson_path = path / 'lessons/testcases/bad_link'
+    lesson_path.mkdir()
+    with open(lesson_path / 'info.yml', 'w') as f:
+        yaml.safe_dump({
+            'title': 'Lesson with a link to nowhere',
+            'style': 'md',
+            'attribution': 'Petr Viktorin',
+            'license': 'cc0',
+        }, f)
+    with open(lesson_path / 'index.md', 'w') as f:
+        print(f'<a href="{bad_link}">Bad link</a>', file=f)
+    destination = tmp_path / 'dest'
+    with pytest.raises((KeyError, ValueError), match=expected_msg):
         naucse_render.compile(path=path, destination=destination)

@@ -1,10 +1,12 @@
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse
+from itertools import chain
 import types
 import sys
 import re
 
 import jinja2
+import lxml.html
 
 from .templates import environment, vars_functions
 from .markdown import convert_markdown
@@ -167,4 +169,31 @@ def render_page(lesson_slug, page_slug, info, path, vars=None):
     if 'latex' in info:
         page['modules'] = {'katex': '0.7.1'}
 
+    # Add links
+    page.update(get_links(text, f'{lesson_slug}/{page_slug}'))
+    # Check links within page
+    for url in page['links']:
+        parsed = urlparse(url)
+        if parsed.scheme or parsed.netloc or parsed.path:
+            continue
+        if parsed.fragment and parsed.fragment not in page['ids']:
+            raise ValueError(
+                f"{page_slug} of lesson {lesson_slug} links to #{parsed.fragment}, but there is no such `id` in {page['ids']}")
+
     return encode_for_json(page)
+
+def get_links(text, slug):
+    links = set()
+    ids = set()
+    result = {'links': links, 'ids': ids}
+    for fragment in lxml.html.fragments_fromstring(text):
+        for element in chain([fragment], fragment.iterdescendants()):
+            for name in 'href', 'src':
+                link = element.attrib.get(name, None)
+                if link:
+                    links.add(link)
+            id_attr = element.attrib.get('id', None)
+            if id_attr:
+                ids.add(id_attr)
+    return {'links': sorted(links), 'ids': sorted(ids)}
+

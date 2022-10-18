@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 data:
     testcases/test_static_tree:
         pages:
@@ -12,7 +12,10 @@ data:
 
                     <p>Output should have ''/'' as the directory separator, regardless
                     of OS.</p>'
+                ids: []
                 license: cc0
+                links:
+                - naucse:static?filename=directory/smile.png
                 slug: index
                 solutions: []
                 source_file: lessons/testcases/test_static_tree/index.md

@@ -1,6 +1,6 @@
 api_version:
 - 0
-- 3
+- 4
 course:
     extra_lessons:
     - homework/tasks
