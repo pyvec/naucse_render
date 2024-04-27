@@ -67,6 +67,9 @@ def solution(ctx, text):
     solution = ctx['$markdown'](text)
     solutions.append(solution)
 
+    # make sure there are no empty lines, which exit Markdown's raw-HTML mode
+    solution = solution.replace('\n', Markup('\n<span></span>'))
+
     return Markup(textwrap.dedent("""
         <div class="solution" id="solution-{}">
             <h3>Řešení</h3>
