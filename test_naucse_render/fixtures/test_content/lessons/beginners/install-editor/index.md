@@ -39,3 +39,19 @@ Podpora více souborů
   * Můžeme odkázat na [Nácvik odsazování]({{ subpage_url('gedit') }}#nacvik_odsazovani).
 
 ...
+
+{% filter solution %}
+```python
+# Třikrát:
+for i in range(3):
+
+    # Nakresli čtverec (kód zkopírovaný z předchozí úlohy a odsazený)
+    for j in range(4):
+        forward(50)
+        left(90)
+
+    # Otoč se o 20°
+    left(20)
+
+```
+{% endfilter %}

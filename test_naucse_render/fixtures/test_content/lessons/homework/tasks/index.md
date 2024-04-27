@@ -1,7 +1,7 @@
 <ol>
-{% for item in data.tasks %}
+{%- for item in data.tasks %}
     <li>
         {{ item.markdown | markdown }}
     </li>
-{% endfor %}
+{%- endfor %}
 </ol>

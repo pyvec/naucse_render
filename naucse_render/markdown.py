@@ -12,57 +12,62 @@ from pygments.token import Generic, Text, Comment
 import pygments.formatters.html
 
 
+def naucse_admonition_plugin(md):
+    """Parse blockquote-based admonitions
+
+    Like this:
+
+    > [note] Note Title
+    > rest of note goes here
+    """
+    # Based on Mistune's "spoiler" plugin (the documentation says:
+    # "take a look at the source code in mistune/plugins to find
+    # out how to write a plugin")
+
+    ADMONITION_NAME_PATTERN = re.compile(r' *\[(\S+)\]([^\n]*)\n')
+
+    def parse_naucse_admonition(block, m, state):
+
+        text, end_pos = block.extract_block_quote(m, state)
+        name_match = ADMONITION_NAME_PATTERN.match(text)
+        if name_match:
+            # It's an admonition
+            token = {
+                'type': 'naucse_admonition',
+                'attrs': {
+                    'name': name_match[1].strip(),
+                    'title': name_match[2].strip(),
+                },
+            }
+            text = text[name_match.end():]
+        else:
+            token = {
+                'type': 'block_quote',
+            }
+
+        child = state.child_state(text)
+        rules = block.block_quote_rules
+        block.parse(child, rules)
+        token['children'] = child.tokens
+        if end_pos:
+            state.prepend_token(token)
+            return end_pos
+        state.append_token(token)
+        return state.cursor
+
+    md.block.register(
+        'block_quote',
+        None,
+        parse_naucse_admonition,
+        before='block_quote',
+    )
+
+
 ansi_convertor = Ansi2HTMLConverter(inline=True)
 
 pygments_formatter = pygments.formatters.html.HtmlFormatter(
     cssclass='highlight'
 )
-
-_admonition_leading_pattern = re.compile(r'^ *> ?', flags=re.M)
-
-
-class BlockGrammar(mistune.BlockGrammar):
-    admonition = re.compile(r'^> *\[(\S+)\]([^\n]*)\n((>[^\n]*[\n]{0,1})*)')
-    deflist = re.compile(r'^(([^\n: ][^\n]*\n)+)((:( {0,3})[^\n]*\n)( \5[^\n]*\n|\n)+)')
-
-
-class BlockLexer(mistune.BlockLexer):
-    grammar_class = BlockGrammar
-
-    default_rules = [
-        'admonition',
-        'deflist',
-    ] + mistune.BlockLexer.default_rules
-
-    def parse_admonition(self, m):
-        self.tokens.append({
-            'type': 'admonition_start',
-            'name': m.group(1),
-            'title': m.group(2).strip(),
-        })
-
-        text = _admonition_leading_pattern.sub('', m.group(3))
-
-        self.parse(dedent(text))
-        self.tokens.append({
-            'type': 'admonition_end',
-        })
-
-    def parse_deflist(self, m):
-        self.tokens.append({
-            'type': 'deflist_term_start',
-        })
-        self.parse(dedent(m.group(1)))
-        self.tokens.append({
-            'type': 'deflist_term_end',
-        })
-        self.tokens.append({
-            'type': 'deflist_def_start',
-        })
-        self.parse(dedent(' ' + m.group(3)[1:]))
-        self.tokens.append({
-            'type': 'deflist_def_end',
-        })
 
 
 def ansi_convert(code):
@@ -74,11 +79,6 @@ def style_space_after_prompt(html):
     return re.sub(r'<span class="gp">([^<]*[^<\s])</span>(\s)',
                   r'<span class="gp">\1\2</span>',
                   html)
-
-
-def matrix_multiplication_operator(html):
-    return html.replace('<span class="err">@</span>',
-                        '<span class="o">@</span>')
 
 
 class MSDOSSessionVenvLexer(RegexLexer):
@@ -129,23 +129,26 @@ def text_to_id(text):
     return text
 
 
-class Renderer(mistune.Renderer):
+class NaucseRenderer(mistune.HTMLRenderer):
     code_tmpl = '<div class="highlight"><pre><code>{}</code></pre></div>'
 
-    def __init__(self, convert_url, *args, **kwargs):
+    def __init__(self, convert_url, *args, escape=False, **kwargs):
         self._convert_url = convert_url
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, escape=False)
 
-    def admonition(self, name, content):
-        return '<div class="admonition {}">{}</div>'.format(name, content)
+    def naucse_admonition(self, text, title, name):
+        if title:
+            text = f'<p class="admonition-title">{title}</p>\n{text}'
+        return '<div class="admonition {}">{}</div>'.format(name, text)
 
-    def header(self, text, level, raw=None):
+    def heading(self, text, level, raw=None):
         header_id = text_to_id(text)
         return f'''<h{level:d} id="{header_id}">{text}
 <a href="#{header_id}" class="header-link">#</a>
 </h{level:d}>\n'''
 
-    def block_code(self, code, lang):
+    def block_code(self, code, info=None):
+        lang = info
         if lang is not None:
             lang = lang.strip()
         if not lang or lang == 'plain':
@@ -157,56 +160,13 @@ class Renderer(mistune.Renderer):
         lexer = get_lexer_by_name(lang)
         html = pygments.highlight(code, lexer, pygments_formatter).strip()
         html = style_space_after_prompt(html)
-        if lang in ('python', 'pycon'):
-            html = matrix_multiplication_operator(html)
         return html
 
-    def deflist(self, items):
-        tags = {'term': 'dt', 'def': 'dd'}
-        return '<dl>\n{}</dl>'.format(''.join(
-            '<{tag}>{text}</{tag}>'.format(tag=tags[type], text=text)
-            for type, text in items
-        ))
+    def link(self, text, url, title=None):
+        return super().link(text, self._convert_url(url), title)
 
-    def link(self, link, title, text):
-        return super().link(self._convert_url(link), title, text)
-
-    def image(self, src, title, text):
-        return super().image(self._convert_url(src), title, text)
-
-
-class Markdown(mistune.Markdown):
-    def output_admonition(self):
-        name = self.token['name']
-        body = self.renderer.placeholder()
-        if self.token['title']:
-            template = '<p class="admonition-title">{}</p>\n'
-            body += template.format(self.token['title'])
-        while self.pop()['type'] != 'admonition_end':
-            body += self.tok()
-        return self.renderer.admonition(name, body)
-
-    def output_deflist_term(self):
-        items = [['term', self.renderer.placeholder()]]
-        while True:
-            end_token = 'deflist_{}_end'.format(items[-1][0])
-            while self.pop()['type'] not in (end_token, 'paragraph'):
-                items[-1][1] += self.tok()
-            if self.token['type'] == 'paragraph':
-                if items[-1][0] == 'term':
-                    items.append(['term', self.renderer.placeholder()])
-                    items[-1][1] += self.token['text']
-                else:
-                    items[-1][1] += self.output_paragraph()
-            elif self.peek()['type'] == 'deflist_term_start':
-                self.pop()
-                items.append(['term', self.renderer.placeholder()])
-            elif self.peek()['type'] == 'deflist_def_start':
-                self.pop()
-                items.append(['def', self.renderer.placeholder()])
-            else:
-                break
-        return self.renderer.deflist(items)
+    def image(self, alt, url, title=None):
+        return super().image(alt, self._convert_url(url), title)
 
 
 def convert_markdown(text, convert_url=None, *, inline=False):
@@ -214,10 +174,9 @@ def convert_markdown(text, convert_url=None, *, inline=False):
 
     text = dedent(text)
 
-    markdown = Markdown(
-        escape=False,
-        block=BlockLexer(),
-        renderer=Renderer(convert_url),
+    markdown = mistune.create_markdown(
+        plugins=['def_list', naucse_admonition_plugin],
+        renderer=NaucseRenderer(convert_url),
     )
     result = markdown(text).strip()
 

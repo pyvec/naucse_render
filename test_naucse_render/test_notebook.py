@@ -33,7 +33,7 @@ def notebook(_notebook):
 def test_notebook_markdown_cell_conversion(notebook):
     markdown = dedent(r"""
         <h2 id="markdown">Markdown
-        <a href="#markdown" class="header-link">#</a>
+        <a class="header-link" href="#markdown">#</a>
         </h2>
         <p>This is <em>Markdown cell</em>!</p>
         <p>It even has some $\LaTeX$:</p>
@@ -43,7 +43,7 @@ def test_notebook_markdown_cell_conversion(notebook):
 
 
 def test_notebook_has_input_prompt(notebook):
-    input_prompt = '<div class="prompt input_prompt">In&nbsp;[1]:</div>'
+    input_prompt = '<div class="prompt input_prompt">In [1]:</div>'
     assert input_prompt in notebook
 
 
@@ -54,7 +54,7 @@ def test_notebook_has_output_prompt(notebook):
 
 def test_notebook_has_highlighted_input_area(notebook):
     input_area = dedent("""
-        <div class=" highlight hl-ipython3">
+        <div class="highlight hl-ipython3">
         <pre>
         <span></span><span class="nb">print</span><span class="p">(</span>
         <span class="s1">'foo'</span><span class="p">)</span>

@@ -4,11 +4,14 @@
 </h2>
 <p>...</p>
 <dl>
-<dt></dt><dt>Podpora více souborů</dt><dd><p>Větší projekty sestávají z více souborů, které můžeš mít v editoru
-otevřené všechny najednou.</p>
-</dd><dt></dt><dt>Číslování řádků</dt><dd><p>Před každým řádkem se ukazuje číslo.
-To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183.</p>
-</dd></dl><p>...</p>
+<dt>Podpora více souborů</dt>
+<dd>Větší projekty sestávají z více souborů, které můžeš mít v editoru
+otevřené všechny najednou.</dd>
+<dt>Číslování řádků</dt>
+<dd>Před každým řádkem se ukazuje číslo.
+To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183.</dd>
+</dl>
+<p>...</p>
 <div class="admonition note"><p>Pro ilustraci, takhle může v editoru vypadat kousek kódu:</p>
 <div class="highlight"><pre><span></span>    <span class="mi">1</span>  <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/courses/&lt;course:course&gt;/&#39;</span><span class="p">)</span>
     <span class="mi">2</span>  <span class="k">def</span> <span class="nf">course_page</span><span class="p">(</span><span class="n">course</span><span class="p">):</span>
@@ -29,3 +32,22 @@ Windows a macOS.</li>
 </li>
 </ul>
 <p>...</p>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="c1"># Třikrát:</span>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span></span>
+<span></span>    <span class="c1"># Nakresli čtverec (kód zkopírovaný z předchozí úlohy a odsazený)</span>
+<span></span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span></span>        <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span></span>        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span></span>
+<span></span>    <span class="c1"># Otoč se o 20°</span>
+<span></span>    <span class="n">left</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span></span></pre></div>
+    </div>
+</div>

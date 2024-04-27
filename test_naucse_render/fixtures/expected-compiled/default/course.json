@@ -69,6 +69,7 @@
                         },
                         "ids": [
                             "co_programatorsky_editor_umi",
+                            "solution-0",
                             "volba_a_nastaveni_editoru"
                         ],
                         "license": "cc-by-sa-40",
@@ -77,10 +78,15 @@
                             "#volba_a_nastaveni_editoru",
                             "naucse:page?lesson=beginners/install-editor&page=atom",
                             "naucse:page?lesson=beginners/install-editor&page=gedit",
-                            "naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani"
+                            "naucse:page?lesson=beginners/install-editor&page=gedit#nacvik_odsazovani",
+                            "naucse:solution?solution=0"
                         ],
                         "slug": "index",
-                        "solutions": [],
+                        "solutions": [
+                            {
+                                "content": "<div class=\"highlight\"><pre><span></span><span class=\"c1\"># Třikrát:</span>\n<span class=\"k\">for</span> <span class=\"n\">i</span> <span class=\"ow\">in</span> <span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">3</span><span class=\"p\">):</span>\n\n    <span class=\"c1\"># Nakresli čtverec (kód zkopírovaný z předchozí úlohy a odsazený)</span>\n    <span class=\"k\">for</span> <span class=\"n\">j</span> <span class=\"ow\">in</span> <span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">4</span><span class=\"p\">):</span>\n        <span class=\"n\">forward</span><span class=\"p\">(</span><span class=\"mi\">50</span><span class=\"p\">)</span>\n        <span class=\"n\">left</span><span class=\"p\">(</span><span class=\"mi\">90</span><span class=\"p\">)</span>\n\n    <span class=\"c1\"># Otoč se o 20°</span>\n    <span class=\"n\">left</span><span class=\"p\">(</span><span class=\"mi\">20</span><span class=\"p\">)</span>\n</pre></div>"
+                            }
+                        ],
                         "source_file": "lessons/beginners/install-editor/index.md",
                         "title": "Instalace editoru",
                         "vars": {}

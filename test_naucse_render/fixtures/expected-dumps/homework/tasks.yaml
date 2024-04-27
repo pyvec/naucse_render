@@ -7,11 +7,11 @@ data:
             index:
                 attribution:
                 - Pro PyLadies Brno napsal Petr Viktorin, 2014-2019
-                content: "<ol>\n\n    <li>\n        <p>A task</p>\n    </li>\n\n \
-                    \   <li>\n        <p>Task with list:</p>\n<ul>\n<li>a</li>\n<li>b</li>\n\
-                    </ul>\n    </li>\n\n    <li>\n        <p>Static files handled\
-                    \ with a <img src=\"naucse:static?filename=smile.png\" alt=\"\
-                    smile\">.</p>\n    </li>\n\n</ol>"
+                content: "<ol>\n    <li>\n        <p>A task</p>\n    </li>\n    <li>\n\
+                    \        <p>Task with list:</p>\n<ul>\n<li>a</li>\n<li>b</li>\n\
+                    </ul>\n    </li>\n    <li>\n        <p>Static files handled with\
+                    \ a <img src=\"naucse:static?filename=smile.png\" alt=\"smile\"\
+                    \ />.</p>\n    </li>\n</ol>"
                 ids: []
                 license: cc-by-sa-40
                 links:
