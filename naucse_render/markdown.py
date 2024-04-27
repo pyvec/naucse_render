@@ -31,7 +31,7 @@ def naucse_admonition_plugin(md):
         text, end_pos = block.extract_block_quote(m, state)
         name_match = ADMONITION_NAME_PATTERN.match(text)
         if name_match:
-            # It's an amonition
+            # It's an admonition
             token = {
                 'type': 'naucse_admonition',
                 'attrs': {
