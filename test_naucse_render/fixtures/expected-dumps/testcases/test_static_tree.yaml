@@ -8,7 +8,7 @@ data:
                 attribution:
                 - Petr Viktorin
                 content: '<p><img src="naucse:static?filename=directory/smile.png"
-                    alt="smile"></p>
+                    alt="smile" /></p>
 
                     <p>Output should have ''/'' as the directory separator, regardless
                     of OS.</p>'

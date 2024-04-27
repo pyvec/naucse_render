@@ -20,9 +20,9 @@ data:
             index:
                 attribution:
                 - Petr Viktorin
-                content: <p>This is the main page with links to subpages <a href="naucse:page?lesson=testcases/test_subpages&amp;page=titled">one</a>,
-                    <a href="naucse:page?lesson=testcases/test_subpages&amp;page=subtitled">two</a>
-                    and <a href="naucse:page?lesson=testcases/test_subpages&amp;page=both-titles">three</a>.</p>
+                content: <p>This is the main page with links to subpages <a href="naucse:page?lesson=testcases/test_subpages&page=titled">one</a>,
+                    <a href="naucse:page?lesson=testcases/test_subpages&page=subtitled">two</a>
+                    and <a href="naucse:page?lesson=testcases/test_subpages&page=both-titles">three</a>.</p>
                 ids: []
                 license: cc0
                 links:

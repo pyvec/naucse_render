@@ -99,8 +99,10 @@ def test_markdown_definition_list():
     expected = dedent("""
         <p>Bla Bla</p>
         <dl>
-        <dt></dt><dt>The Term</dt><dd><p>Its Definition</p>
-        </dd></dl><p>More Text</p>
+        <dt>The Term</dt>
+        <dd>Its Definition</dd>
+        </dl>
+        <p>More Text</p>
     """).strip()
     assert convert_markdown(src).strip() == expected
 
@@ -123,11 +125,15 @@ def test_markdown_definition_list_advanced():
     expected = dedent("""
         <p>Bla Bla</p>
         <dl>
-        <dt></dt><dt>The Term</dt><dd><p>Its Definition
+        <dt>The Term</dt>
+        <dd><p>Its Definition
         More Definition</p>
         <p>Even More</p>
-        </dd><dt></dt><dt>Another Term</dt><dd><p>Define this</p>
-        </dd></dl><p>More Text</p>
+        </dd>
+        <dt>Another Term</dt>
+        <dd>Define this</dd>
+        </dl>
+        <p>More Text</p>
     """).strip()
     print(convert_markdown(src))
     assert convert_markdown(src).strip() == expected
@@ -160,7 +166,8 @@ def test_markdown_ansi_colors():
           (use "git add &lt;file&gt;..." to update what will be committed)
           (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-            <span style="color: #aa0000">modified:   test_naucse/test_markdown.py</span></code></pre></div>
+            <span style="color: #aa0000">modified:   test_naucse/test_markdown.py</span>
+        </code></pre></div>
     """).strip()
     assert convert_markdown(src) == expected
 
@@ -287,7 +294,7 @@ def test_convert_full_dosvenv_prompt():
     """)
     expected = dedent(r"""
         <div class="highlight"><pre><span></span><span class="gp">&gt; </span>whoami
-        <span class="go">helena</span><span class="gp"></span>
+        <span class="go">helena</span>
         <span class="gp">&gt; </span>venv\Scripts\activate  <span class="c"># activate virtualenv</span>
         <span class="gp">(venv)&gt; </span>dir
         <span class="go"> Directory of C:\Users\helena</span>

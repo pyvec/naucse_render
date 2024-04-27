@@ -42,24 +42,27 @@ data:
                 content: "<h1 id=\"instalace_geditu\">Instalace  Geditu\n<a href=\"\
                     #instalace_geditu\" class=\"header-link\">#</a>\n</h1>\n<p>Na\
                     \ Linuxu se Gedit instaluje jako ostatn\xED programy:</p>\n<dl>\n\
-                    <dt></dt><dt>Fedora</dt><dd><div class=\"highlight\"><pre><span></span><span\
-                    \ class=\"gp\">$ </span>sudo dnf install gedit\n</pre></div></dd><dt></dt><dt>Ubuntu</dt><dd><div\
-                    \ class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>sudo\
-                    \ apt-get install gedit\n</pre></div></dd></dl><p>Pou\u017E\xED\
+                    <dt>Fedora</dt>\n<dd><div class=\"highlight\"><pre><span></span><span\
+                    \ class=\"gp\">$ </span>sudo<span class=\"w\"> </span>dnf<span\
+                    \ class=\"w\"> </span>install<span class=\"w\"> </span>gedit\n\
+                    </pre></div></dd>\n<dt>Ubuntu</dt>\n<dd><div class=\"highlight\"\
+                    ><pre><span></span><span class=\"gp\">$ </span>sudo<span class=\"\
+                    w\"> </span>apt-get<span class=\"w\"> </span>install<span class=\"\
+                    w\"> </span>gedit\n</pre></div></dd>\n</dl>\n<p>Pou\u017E\xED\
                     v\xE1\u0161-li jin\xFD Linux, p\u0159edpokl\xE1d\xE1m \u017Ee\
                     \ programy instalovat um\xED\u0161. :)</p>\n<p>Pro Windows a macOS\
                     \ se Gedit d\xE1 st\xE1hnout z\_<a href=\"https://wiki.gnome.org/Apps/Gedit\"\
                     >domovsk\xE9 str\xE1nky</a>.</p>\n<h2 id=\"nastaveni\">Nastaven\xED\
                     \n<a href=\"#nastaveni\" class=\"header-link\">#</a>\n</h2>\n\
-                    <p>...</p>\n<dl>\n<dt></dt><dt>\u010C\xEDslov\xE1n\xED \u0159\xE1\
-                    dk\u016F</dt><dd><p>V\_sekci Zobrazit/<span class=\"en\">View</span>\
+                    <p>...</p>\n<dl>\n<dt>\u010C\xEDslov\xE1n\xED \u0159\xE1dk\u016F\
+                    </dt>\n<dd><p>V\_sekci Zobrazit/<span class=\"en\">View</span>\
                     \ vyber\nZobrazovat \u010D\xEDsla \u0159\xE1dk\u016F/<span class=\"\
                     en\">Display Line Numbers</span>.</p>\n<p><span class=\"figure\"\
                     ><a href=\"naucse:static?filename=gedit_linenums.png\"><img src=\"\
                     naucse:static?filename=gedit_linenums.png\" alt=\"\"></a></span></p>\n\
-                    </dd></dl><p>...</p>\n<h2 id=\"nacvik_odsazovani\">N\xE1cvik odsazov\xE1\
-                    n\xED\n<a href=\"#nacvik_odsazovani\" class=\"header-link\">#</a>\n\
-                    </h2>\n<p>...</p>"
+                    </dd>\n</dl>\n<p>...</p>\n<h2 id=\"nacvik_odsazovani\">N\xE1cvik\
+                    \ odsazov\xE1n\xED\n<a href=\"#nacvik_odsazovani\" class=\"header-link\"\
+                    >#</a>\n</h2>\n<p>...</p>"
                 ids:
                 - instalace_geditu
                 - nacvik_odsazovani
@@ -81,14 +84,14 @@ data:
                 - Pro PyLadies Brno napsal Petr Viktorin, 2014-2017
                 content: "<p>...</p>\n<h2 id=\"co_programatorsky_editor_umi\">Co program\xE1\
                     torsk\xFD editor um\xED\n<a href=\"#co_programatorsky_editor_umi\"\
-                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<dl>\n<dt></dt><dt>Podpora\
-                    \ v\xEDce soubor\u016F</dt><dd><p>V\u011Bt\u0161\xED projekty\
-                    \ sest\xE1vaj\xED z\_v\xEDce soubor\u016F, kter\xE9 m\u016F\u017E\
-                    e\u0161 m\xEDt v\_editoru\notev\u0159en\xE9 v\u0161echny najednou.</p>\n\
-                    </dd><dt></dt><dt>\u010C\xEDslov\xE1n\xED \u0159\xE1dk\u016F</dt><dd><p>P\u0159\
+                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<dl>\n<dt>Podpora\
+                    \ v\xEDce soubor\u016F</dt>\n<dd>V\u011Bt\u0161\xED projekty sest\xE1\
+                    vaj\xED z\_v\xEDce soubor\u016F, kter\xE9 m\u016F\u017Ee\u0161\
+                    \ m\xEDt v\_editoru\notev\u0159en\xE9 v\u0161echny najednou.</dd>\n\
+                    <dt>\u010C\xEDslov\xE1n\xED \u0159\xE1dk\u016F</dt>\n<dd>P\u0159\
                     ed ka\u017Ed\xFDm \u0159\xE1dkem se ukazuje \u010D\xEDslo.\nTo\
                     \ se bude velice hodit, a\u017E Python bude nad\xE1vat, \u017E\
-                    e chyba je na \u0159\xE1dku 183.</p>\n</dd></dl><p>...</p>\n<div\
+                    e chyba je na \u0159\xE1dku 183.</dd>\n</dl>\n<p>...</p>\n<div\
                     \ class=\"admonition note\"><p>Pro ilustraci, takhle m\u016F\u017E\
                     e v\_editoru vypadat kousek k\xF3du:</p>\n<div class=\"highlight\"\
                     ><pre><span></span>    <span class=\"mi\">1</span>  <span class=\"\
