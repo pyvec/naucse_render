@@ -98,13 +98,13 @@ data:
                     nd\">@app</span><span class=\"o\">.</span><span class=\"n\">route</span><span\
                     \ class=\"p\">(</span><span class=\"s1\">&#39;/courses/&lt;course:course&gt;/&#39;</span><span\
                     \ class=\"p\">)</span>\n    <span class=\"mi\">2</span>  <span\
-                    \ class=\"k\">def</span> <span class=\"nf\">course_page</span><span\
-                    \ class=\"p\">(</span><span class=\"n\">course</span><span class=\"\
-                    p\">):</span>\n    <span class=\"mi\">3</span>      <span class=\"\
-                    o\">...</span>\n</pre></div></div><h2 id=\"volba_a_nastaveni_editoru\"\
-                    >Volba a nastaven\xED editoru\n<a href=\"#volba_a_nastaveni_editoru\"\
-                    \ class=\"header-link\">#</a>\n</h2>\n<p>...</p>\n<ul>\n<li><a\
-                    \ href=\"naucse:page?lesson=beginners/install-editor&amp;page=atom\"\
+                    \ class=\"k\">def</span><span class=\"w\"> </span><span class=\"\
+                    nf\">course_page</span><span class=\"p\">(</span><span class=\"\
+                    n\">course</span><span class=\"p\">):</span>\n    <span class=\"\
+                    mi\">3</span>      <span class=\"o\">...</span>\n</pre></div></div><h2\
+                    \ id=\"volba_a_nastaveni_editoru\">Volba a nastaven\xED editoru\n\
+                    <a href=\"#volba_a_nastaveni_editoru\" class=\"header-link\">#</a>\n\
+                    </h2>\n<p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=atom\"\
                     >Atom</a> \u2013 doporu\u010Den\xFD editor pro\nWindows a macOS.</li>\n\
                     </ul>\n<p>...</p>\n<ul>\n<li><a href=\"naucse:page?lesson=beginners/install-editor&amp;page=gedit\"\
                     >Gedit</a> \u2013 b\xFDv\xE1 na syst\xE9mech s\_prost\u0159ed\xED\

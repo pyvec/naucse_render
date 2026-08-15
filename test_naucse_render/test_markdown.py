@@ -226,8 +226,8 @@ def test_convert_with_prompt_spaces_pycon():
     """)
     expected = dedent("""
         <div class="highlight"><pre><span></span>
-        <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span>
-         <span class="nf">foo</span><span class="p">(</span>
+        <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w">
+         </span><span class="nf">foo</span><span class="p">(</span>
         <span class="n">req</span><span class="p">):</span>
         <span class="gp">... </span>
             <span class="k">return</span> <span class="n">req</span>
