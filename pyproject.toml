@@ -14,7 +14,7 @@ classifiers = [
 ]
 dependencies = [
     'ansi2html',
-    'mistune<3.3.0',
+    'mistune>=3.3.0,<4',
     'nbconvert>=7.0,<8.0',
     'traitlets',
     'click',

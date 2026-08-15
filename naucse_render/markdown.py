@@ -25,12 +25,13 @@ def naucse_admonition_plugin(md):
     # out how to write a plugin")
 
     ADMONITION_NAME_PATTERN = re.compile(r' *\[(\S+)\]([^\n]*)\n')
-
     def parse_naucse_admonition(block, m, state):
+        text, end_pos, lazy_line_starts = block.extract_block_quote(m, state)
 
-        text, end_pos = block.extract_block_quote(m, state)
         name_match = ADMONITION_NAME_PATTERN.match(text)
-        if name_match:
+
+        depth = state.depth()
+        if not depth and name_match:
             # It's an admonition
             token = {
                 'type': 'naucse_admonition',
@@ -45,8 +46,14 @@ def naucse_admonition_plugin(md):
                 'type': 'block_quote',
             }
 
-        child = state.child_state(text)
-        rules = block.block_quote_rules
+        # scan children state
+        child = state.child_state(text, lazy_line_starts=lazy_line_starts)
+        if state.depth() >= block.max_nested_level - 1:
+            rules = list(block.block_quote_rules)
+            rules.remove("block_quote")
+        else:
+            rules = block.block_quote_rules
+
         block.parse(child, rules)
         token['children'] = child.tokens
         if end_pos:
