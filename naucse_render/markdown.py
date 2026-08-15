@@ -139,9 +139,22 @@ def text_to_id(text):
 class NaucseRenderer(mistune.HTMLRenderer):
     code_tmpl = '<div class="highlight"><pre><code>{}</code></pre></div>'
 
-    def __init__(self, convert_url, *args, escape=False, **kwargs):
+    def __init__(
+        self,
+        convert_url,
+        *args,
+        escape=False,
+        allow_harmful_protocols=True,
+        **kwargs,
+    ):
         self._convert_url = convert_url
-        super().__init__(*args, **kwargs, escape=False)
+        super().__init__(
+            *args, **kwargs,
+            # We check the resulting HTML, so we don't sanitization
+            # in the Markdown->HTML translation
+            escape=False,
+            allow_harmful_protocols=True,
+        )
 
     def naucse_admonition(self, text, title, name):
         if title:
