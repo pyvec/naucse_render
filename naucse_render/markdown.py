@@ -143,8 +143,6 @@ class NaucseRenderer(mistune.HTMLRenderer):
         self,
         convert_url,
         *args,
-        escape=False,
-        allow_harmful_protocols=True,
         **kwargs,
     ):
         self._convert_url = convert_url
