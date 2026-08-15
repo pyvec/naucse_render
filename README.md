@@ -89,6 +89,13 @@ licensed under the same license.
 
 ## Changelog
 
+### naucse_render 2.1
+
+* Update to mistune 3.3. This changes parsing & formatting for Markdown again.
+  In most cases the differences should be superficial.
+
+* Tested with Python 3.11-3.15
+
 ### naucse_render 2.0
 
 * Update to mistune 3.x & nbconvert 7.x. This changes parsing & formatting
